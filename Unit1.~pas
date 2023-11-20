@@ -4,14 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Menus;
+  Dialogs, StdCtrls;
 
 type
   TForm1 = class(TForm)
-    MainMenu1: TMainMenu;
-    eilnehmer1: TMenuItem;
-    Rundenbersicht1: TMenuItem;
-    Direktausscheidung1: TMenuItem;
     procedure FormShow(Sender: TObject);
   private
     { Private-Deklarationen }
