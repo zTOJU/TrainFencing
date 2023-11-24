@@ -1,4 +1,4 @@
-unit Unit1;
+unit unitMain;
 
 interface
 
@@ -7,11 +7,12 @@ uses
   Dialogs, StdCtrls, Menus;
 
 type
-  TForm1 = class(TForm)
-    MainMenu1: TMainMenu;
-    eilnehmer1: TMenuItem;
-    Rundenbersicht1: TMenuItem;
-    Direktausscheidung1: TMenuItem;
+  TfrmMain = class(TForm)
+    btnParticipant: TButton;
+    btnInformation: TButton;
+    btnRounds: TButton;
+    btnKO: TButton;
+    btnResults: TButton;
     procedure FormShow(Sender: TObject);
   private
     { Private-Deklarationen }
@@ -20,18 +21,17 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
-uses Unit2;
+uses unitInformation;
 
 {$R *.dfm}
 
-procedure TForm1.FormShow(Sender: TObject);
+procedure TfrmMain.FormShow(Sender: TObject);
 begin
-  Form2.Show;
+  frmInformation.Show;
 end;
 
 end.
- 

@@ -1,9 +1,9 @@
-object Form1: TForm1
+object frmMain: TfrmMain
   Left = 179
   Top = 123
   Width = 818
   Height = 100
-  Caption = 'Form1'
+  Caption = 'frmMain'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object Form1: TForm1
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object BtnParticipant: TButton
+  object btnParticipant: TButton
     Left = 168
     Top = 16
     Width = 146
@@ -28,7 +28,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 0
   end
-  object BtnInformation: TButton
+  object btnInformation: TButton
     Left = 8
     Top = 16
     Width = 146
@@ -42,7 +42,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 1
   end
-  object BtnRounds: TButton
+  object btnRounds: TButton
     Left = 328
     Top = 16
     Width = 146
@@ -56,7 +56,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 2
   end
-  object BtnKO: TButton
+  object btnKO: TButton
     Left = 488
     Top = 16
     Width = 146
@@ -70,7 +70,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 3
   end
-  object BtnResults: TButton
+  object btnResults: TButton
     Left = 648
     Top = 16
     Width = 146

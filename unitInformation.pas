@@ -1,4 +1,4 @@
-unit Unit2;
+unit unitInformation;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Dialogs, StdCtrls;
 
 type
-  TForm2 = class(TForm)
+  TfrmInformation = class(TForm)
     Titel: TLabel;
     Titel2: TLabel;
   private
@@ -17,7 +17,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  frmInformation: TfrmInformation;
 
 implementation
 
