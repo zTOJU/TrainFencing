@@ -8,10 +8,11 @@ uses
 
 type
   TForm1 = class(TForm)
-    MainMenu1: TMainMenu;
-    eilnehmer1: TMenuItem;
-    Rundenbersicht1: TMenuItem;
-    Direktausscheidung1: TMenuItem;
+    BtnParticipant: TButton;
+    BtnInformation: TButton;
+    BtnRounds: TButton;
+    BtnKO: TButton;
+    BtnResults: TButton;
     procedure FormShow(Sender: TObject);
   private
     { Private-Deklarationen }

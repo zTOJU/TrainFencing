@@ -1,8 +1,8 @@
 object Form2: TForm2
   Left = 179
-  Top = 239
-  Width = 640
-  Height = 290
+  Top = 220
+  Width = 818
+  Height = 504
   Caption = 'Form2'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,7 +14,7 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object Titel: TLabel
-    Left = 50
+    Left = 147
     Top = 24
     Width = 524
     Height = 29
@@ -27,8 +27,8 @@ object Form2: TForm2
     ParentFont = False
   end
   object Titel2: TLabel
-    Left = 216
-    Top = 64
+    Left = 306
+    Top = 56
     Width = 205
     Height = 20
     Caption = 'Entwickelt von Thore Korte (A24-1)'
