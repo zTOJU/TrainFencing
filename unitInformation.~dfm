@@ -39,12 +39,4 @@ object frmInformation: TfrmInformation
     Font.Style = []
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 344
-    Top = 240
-    Width = 177
-    Height = 25
-    Caption = 'Neuen Wettkampf starten'
-    TabOrder = 0
-  end
 end

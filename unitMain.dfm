@@ -27,6 +27,7 @@ object frmMain: TfrmMain
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = btnParticipantClick
   end
   object btnInformation: TButton
     Left = 8
@@ -41,6 +42,7 @@ object frmMain: TfrmMain
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnClick = btnInformationClick
   end
   object btnRounds: TButton
     Left = 328
