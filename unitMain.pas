@@ -33,7 +33,7 @@ type
 var
   frmMain: TfrmMain;
   Tabs : Array[0..4] of TTab;
-  currentTab : TForm;
+  currentTab : Integer;
 
 implementation
 
@@ -41,60 +41,77 @@ uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
 
 {$R *.dfm}
 
-function allowTab(tab:TForm):Boolean;
-begin
+{
+  Informationen:      0
+  Teilnehmer:         1
+  Rundenübersicht:    2
+  Direktausscheidung: 3
+  Platzierung:        4
+}
 
+function allowTab(tab:Integer):Boolean;
+begin
+  Result := Tabs[tab].status;
 end;
 
-procedure setTabStatus(tab:TForm; status:Boolean); // Int?ß?
-begin
 
+procedure setTabStatus(tab:Integer; status:Boolean);
+begin
+  Tabs[tab].status := status;
 end;
 
-procedure changeTab(newTab:TForm);
+procedure changeTab(newTab:Integer);
 begin
-  if Assigned(currentTab)
-    then currentTab.Hide;
-  newTab.Show;
-  currentTab := newTab;
+  if allowTab(newTab) then
+    begin
+      Tabs[currentTab].form.Hide;
+      Tabs[newTab].form.Show;
+      currentTab := newTab;
+    end;
 end;
 
 // Init
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
   Tabs[0].form := frmInformation;
+  setTabStatus(0, true);
   Tabs[1].form := frmParticipant;
+  setTabStatus(1, false);
   Tabs[2].form := frmRounds;
+  setTabStatus(2, false);
   Tabs[3].form := frmKO;
+  setTabStatus(3, false);
   Tabs[4].form := frmResults;
+  setTabStatus(4, false);
 
-  changeTab(Tabs[0].form);
+  changeTab(0);
 end;
 
 // Buttons
 procedure TfrmMain.btnInformationClick(Sender: TObject);
 begin
-  changeTab(Tabs[0].form);
+  changeTab(0);
 end;
 
 procedure TfrmMain.btnParticipantClick(Sender: TObject);
 begin
-  changeTab(Tabs[1].form);
+  changeTab(1);
 end;
 
 procedure TfrmMain.btnRoundsClick(Sender: TObject);
 begin
-  changeTab(Tabs[2].form);
+  changeTab(2);
 end;
 
 procedure TfrmMain.btnKOClick(Sender: TObject);
 begin
-  changeTab(Tabs[3].form);
+  changeTab(3);
+  btnKO.Font.Color := clGrey;
 end;
 
 procedure TfrmMain.btnResultsClick(Sender: TObject);
 begin
-  changeTab(Tabs[4].form);
+  changeTab(4);
 end;
 
 end.

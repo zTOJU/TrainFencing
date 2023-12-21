@@ -1,7 +1,7 @@
 object frmResults: TfrmResults
   Left = 179
   Top = 220
-  Width = 818
+  Width = 808
   Height = 504
   Caption = 'Platzierung'
   Color = clBtnFace
