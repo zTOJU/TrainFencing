@@ -16,6 +16,9 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnParticipantClick(Sender: TObject);
     procedure btnInformationClick(Sender: TObject);
+    procedure btnRoundsClick(Sender: TObject);
+    procedure btnKOClick(Sender: TObject);
+    procedure btnResultsClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -28,7 +31,7 @@ var
 
 implementation
 
-uses unitInformation, unitParticipant;
+uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
 
 {$R *.dfm}
 
@@ -53,6 +56,21 @@ end;
 procedure TfrmMain.btnParticipantClick(Sender: TObject);
 begin
   changeTab(frmParticipant);
+end;
+
+procedure TfrmMain.btnRoundsClick(Sender: TObject);
+begin
+  changeTab(frmRounds);
+end;
+
+procedure TfrmMain.btnKOClick(Sender: TObject);
+begin
+  changeTab(frmKO);
+end;
+
+procedure TfrmMain.btnResultsClick(Sender: TObject);
+begin
+  changeTab(frmResults);
 end;
 
 end.

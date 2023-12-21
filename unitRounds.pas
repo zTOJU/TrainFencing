@@ -1,16 +1,13 @@
-unit unitInformation;
+unit unitRounds;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs;
 
 type
-  TfrmInformation = class(TForm)
-    Titel: TLabel;
-    Titel2: TLabel;
-    Button1: TButton;
+  TfrmRounds = class(TForm)
   private
     { Private-Deklarationen }
   public
@@ -18,7 +15,7 @@ type
   end;
 
 var
-  frmInformation: TfrmInformation;
+  frmRounds: TfrmRounds;
 
 implementation
 

@@ -16,9 +16,9 @@ object frmInformation: TfrmInformation
   object Titel: TLabel
     Left = 147
     Top = 24
-    Width = 524
+    Width = 528
     Height = 29
-    Caption = 'Organisationsprogramm f'#252'r Traningswettk'#228'mpfe im Fechten'
+    Caption = 'Organisationsprogramm f'#252'r Trainingswettk'#228'mpfe im Fechten'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -24
@@ -38,5 +38,13 @@ object frmInformation: TfrmInformation
     Font.Name = 'Arial Narrow'
     Font.Style = []
     ParentFont = False
+  end
+  object Button1: TButton
+    Left = 344
+    Top = 240
+    Width = 177
+    Height = 25
+    Caption = 'Neuen Wettkampf starten'
+    TabOrder = 0
   end
 end

@@ -1,16 +1,13 @@
-unit unitInformation;
+unit unitResults;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs;
 
 type
-  TfrmInformation = class(TForm)
-    Titel: TLabel;
-    Titel2: TLabel;
-    Button1: TButton;
+  TfrmResults = class(TForm)
   private
     { Private-Deklarationen }
   public
@@ -18,7 +15,7 @@ type
   end;
 
 var
-  frmInformation: TfrmInformation;
+  frmResults: TfrmResults;
 
 implementation
 

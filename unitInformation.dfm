@@ -3,7 +3,7 @@ object frmInformation: TfrmInformation
   Top = 220
   Width = 818
   Height = 504
-  Caption = 'frmInformation'
+  Caption = 'Informationen'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,9 +16,9 @@ object frmInformation: TfrmInformation
   object Titel: TLabel
     Left = 147
     Top = 24
-    Width = 524
+    Width = 528
     Height = 29
-    Caption = 'Organisationsprogramm f'#252'r Traningswettk'#228'mpfe im Fechten'
+    Caption = 'Organisationsprogramm f'#252'r Trainingswettk'#228'mpfe im Fechten'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -24

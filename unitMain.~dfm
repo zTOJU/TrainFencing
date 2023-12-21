@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 123
   Width = 818
   Height = 100
-  Caption = 'frmMain'
+  Caption = 'Menu'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -57,6 +57,7 @@ object frmMain: TfrmMain
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnClick = btnRoundsClick
   end
   object btnKO: TButton
     Left = 488
@@ -71,6 +72,7 @@ object frmMain: TfrmMain
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnClick = btnKOClick
   end
   object btnResults: TButton
     Left = 648
@@ -85,5 +87,6 @@ object frmMain: TfrmMain
     Font.Style = []
     ParentFont = False
     TabOrder = 4
+    OnClick = btnResultsClick
   end
 end
