@@ -3,7 +3,7 @@ object frmRounds: TfrmRounds
   Top = 220
   Width = 818
   Height = 504
-  Caption = 'Runden'#252'bersicht'
+  Caption = 'Runden'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

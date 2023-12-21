@@ -25,15 +25,31 @@ type
     { Public-Deklarationen }
   end;
 
+  TTab = Record
+    form : TForm;
+    status : Boolean;
+  end;
+
 var
   frmMain: TfrmMain;
+  Tabs : Array[0..4] of TTab;
   currentTab : TForm;
 
 implementation
 
-uses unitInformation, unitParticipant, unitRounds, unitKO;
+uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
 
 {$R *.dfm}
+
+function allowTab(tab:TForm):Boolean;
+begin
+
+end;
+
+procedure setTabStatus(tab:TForm; status:Boolean); // Int?ß?
+begin
+
+end;
 
 procedure changeTab(newTab:TForm);
 begin
@@ -43,34 +59,42 @@ begin
   currentTab := newTab;
 end;
 
+// Init
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-  changeTab(frmInformation);
+  Tabs[0].form := frmInformation;
+  Tabs[1].form := frmParticipant;
+  Tabs[2].form := frmRounds;
+  Tabs[3].form := frmKO;
+  Tabs[4].form := frmResults;
+
+  changeTab(Tabs[0].form);
 end;
 
+// Buttons
 procedure TfrmMain.btnInformationClick(Sender: TObject);
 begin
-  changeTab(frmInformation);
+  changeTab(Tabs[0].form);
 end;
 
 procedure TfrmMain.btnParticipantClick(Sender: TObject);
 begin
-  changeTab(frmParticipant);
+  changeTab(Tabs[1].form);
 end;
 
 procedure TfrmMain.btnRoundsClick(Sender: TObject);
 begin
-  changeTab(frmRounds);
+  changeTab(Tabs[2].form);
 end;
 
 procedure TfrmMain.btnKOClick(Sender: TObject);
 begin
-  changeTab(frmKO);
+  changeTab(Tabs[3].form);
 end;
 
 procedure TfrmMain.btnResultsClick(Sender: TObject);
 begin
-  changeTab(frmResults);
+  changeTab(Tabs[4].form);
 end;
 
 end.

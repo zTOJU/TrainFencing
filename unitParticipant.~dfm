@@ -1,8 +1,8 @@
 object frmParticipant: TfrmParticipant
-  Left = 205
-  Top = 200
-  Width = 1015
-  Height = 583
+  Left = 179
+  Top = 220
+  Width = 818
+  Height = 504
   Caption = 'frmParticipant'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
