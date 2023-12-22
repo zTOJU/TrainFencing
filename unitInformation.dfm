@@ -39,12 +39,61 @@ object frmInformation: TfrmInformation
     Font.Style = []
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 344
-    Top = 240
-    Width = 177
-    Height = 25
-    Caption = 'Neuen Wettkampf starten'
+  object labNameCount: TLabel
+    Left = 24
+    Top = 400
+    Width = 48
+    Height = 13
+    Caption = 'Gesamt: 0'
+  end
+  object Label1: TLabel
+    Left = 480
+    Top = 232
+    Width = 32
+    Height = 13
+    Caption = 'Label1'
+  end
+  object listNames: TListBox
+    Left = 24
+    Top = 144
+    Width = 249
+    Height = 249
+    ItemHeight = 13
     TabOrder = 0
+  end
+  object editName: TEdit
+    Left = 24
+    Top = 112
+    Width = 249
+    Height = 21
+    Hint = 'Name des Teilnehmers'
+    TabOrder = 1
+  end
+  object btnAddName: TButton
+    Left = 280
+    Top = 112
+    Width = 75
+    Height = 25
+    Caption = 'Hinzuf'#252'gen'
+    TabOrder = 2
+    OnClick = btnAddNameClick
+  end
+  object btnDelName: TButton
+    Left = 280
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = 'L'#246'schen'
+    TabOrder = 3
+    OnClick = btnDelNameClick
+  end
+  object btnSubmitNames: TButton
+    Left = 280
+    Top = 176
+    Width = 75
+    Height = 25
+    Caption = 'Best'#228'tigen'
+    TabOrder = 4
+    OnClick = btnSubmitNamesClick
   end
 end

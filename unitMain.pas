@@ -106,7 +106,6 @@ end;
 procedure TfrmMain.btnKOClick(Sender: TObject);
 begin
   changeTab(3);
-  btnKO.Font.Color := clGrey;
 end;
 
 procedure TfrmMain.btnResultsClick(Sender: TObject);
