@@ -2,6 +2,8 @@ unit unitMain;
 
 interface
 
+procedure setTabStatus(tab:Integer; status:Boolean);
+
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Menus;
@@ -106,7 +108,6 @@ end;
 procedure TfrmMain.btnKOClick(Sender: TObject);
 begin
   changeTab(3);
-  btnKO.Font.Color := clRed;
 end;
 
 procedure TfrmMain.btnResultsClick(Sender: TObject);

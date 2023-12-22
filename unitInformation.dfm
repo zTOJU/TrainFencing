@@ -46,13 +46,6 @@ object frmInformation: TfrmInformation
     Height = 13
     Caption = 'Gesamt: 0'
   end
-  object Label1: TLabel
-    Left = 480
-    Top = 232
-    Width = 32
-    Height = 13
-    Caption = 'Label1'
-  end
   object listNames: TListBox
     Left = 24
     Top = 144

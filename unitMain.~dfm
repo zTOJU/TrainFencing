@@ -66,7 +66,7 @@ object frmMain: TfrmMain
     Height = 25
     Caption = 'Direktausscheidung'
     Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -13
     Font.Name = 'Montserrat'
     Font.Style = []

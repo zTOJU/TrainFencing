@@ -4,10 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, Grids, StdCtrls;
 
 type
   TfrmParticipant = class(TForm)
+    sgNames: TStringGrid;
   private
     { Private-Deklarationen }
   public
@@ -20,5 +21,6 @@ var
 implementation
 
 {$R *.dfm}
+
 
 end.

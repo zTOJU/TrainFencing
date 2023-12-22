@@ -89,14 +89,4 @@ object frmInformation: TfrmInformation
     TabOrder = 4
     OnClick = btnSubmitNamesClick
   end
-  object cbRoundsSize: TComboBox
-    Left = 464
-    Top = 160
-    Width = 145
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 5
-    Text = 'Rundengr'#246#223'e'
-    OnDropDown = cbRoundsSizeDropDown
-  end
 end

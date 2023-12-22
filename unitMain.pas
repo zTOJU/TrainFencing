@@ -6,6 +6,8 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Menus;
 
+procedure setTabStatus(tab:Integer; status:Boolean);
+
 type
   TfrmMain = class(TForm)
     btnParticipant: TButton;
