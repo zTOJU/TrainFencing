@@ -22,5 +22,4 @@ implementation
 
 {$R *.dfm}
 
-
 end.

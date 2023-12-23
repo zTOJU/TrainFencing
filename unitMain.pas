@@ -51,18 +51,20 @@ uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
   Platzierung:        4
 }
 
-function allowTab(tab:Integer):Boolean;
+// Check if switching to a new tab is allowed
+function allowTab(tab: Integer):Boolean;
 begin
   Result := Tabs[tab].status;
 end;
 
-
-procedure setTabStatus(tab:Integer; status:Boolean);
+// Enable/Disable switching to a tab
+procedure setTabStatus(tab: Integer; status: Boolean);
 begin
   Tabs[tab].status := status;
 end;
 
-procedure changeTab(newTab:Integer);
+// Switch to another tab
+procedure changeTab(newTab: Integer);
 begin
   if allowTab(newTab) then
     begin
@@ -80,7 +82,7 @@ begin
   Tabs[1].form := frmParticipant;
   setTabStatus(1, false);
   Tabs[2].form := frmRounds;
-  setTabStatus(2, false);
+  setTabStatus(2, true);
   Tabs[3].form := frmKO;
   setTabStatus(3, false);
   Tabs[4].form := frmResults;

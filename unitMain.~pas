@@ -2,11 +2,11 @@ unit unitMain;
 
 interface
 
-procedure setTabStatus(tab:Integer; status:Boolean);
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Menus;
+
+procedure setTabStatus(tab:Integer; status:Boolean);
 
 type
   TfrmMain = class(TForm)
@@ -51,18 +51,20 @@ uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
   Platzierung:        4
 }
 
-function allowTab(tab:Integer):Boolean;
+// Check if switching to a new tab is allowed
+function allowTab(tab: Integer):Boolean;
 begin
   Result := Tabs[tab].status;
 end;
 
-
-procedure setTabStatus(tab:Integer; status:Boolean);
+// Enable/Disable switching to a tab
+procedure setTabStatus(tab: Integer; status: Boolean);
 begin
   Tabs[tab].status := status;
 end;
 
-procedure changeTab(newTab:Integer);
+// Switch to another tab
+procedure changeTab(newTab: Integer);
 begin
   if allowTab(newTab) then
     begin

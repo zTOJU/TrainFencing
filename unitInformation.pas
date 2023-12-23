@@ -36,6 +36,7 @@ uses unitMain, unitParticipant;
 
 {$R *.dfm}
 
+// Add new name
 procedure TfrmInformation.btnAddNameClick(Sender: TObject);
 begin
   if Length(editName.Text) > 0
@@ -47,6 +48,7 @@ begin
     end;
 end;
 
+// Delete selected name
 procedure TfrmInformation.btnDelNameClick(Sender: TObject);
 begin
   if listNames.ItemIndex > -1
@@ -63,11 +65,13 @@ var i : Integer;
 begin
   if listNames.Count > 1
     then begin
+      // Hide old elements
       editName.Hide;
       btnAddName.Hide;
       btnDelName.Hide;
       btnSubmitNames.Hide;
 
+      // Calc round size
       case nameCount of
         2,4 : roundSize := 2;
         3,5,6 : roundSize := 3;
@@ -77,14 +81,18 @@ begin
         13..99 : roundSize := 7;
       end;
       labNameCount.Caption := labNameCount.Caption + ' (Rundengröße: ' + IntToStr(roundSize) + ')';
-      unitMain.setTabStatus(1, true);
 
+      // Create participants list
+      unitMain.setTabStatus(1, true);
       for i:=0 to nameCount - 1
         do begin
-          frmParticipant.sgNames.Cells[0, i] := frmInformation.listNames.Items[i];
+          frmParticipant.sgNames.Cells[0, i] := IntToStr(i+1) + '. ' + frmInformation.listNames.Items[i];
           if i > 0
             then frmParticipant.sgNames.RowCount := frmParticipant.sgNames.RowCount + 1;
         end;
+
+      // Create rounds
+      unitMain.setTabStatus(2, true);
     end
     else ShowMessage('Bitte füge erst mindestens 2 Namen hinzu!');
 end;
