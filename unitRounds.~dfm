@@ -11,24 +11,9 @@ object frmRounds: TfrmRounds
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object editRoundNum: TEdit
-    Left = 16
-    Top = 16
-    Width = 49
-    Height = 25
-    TabOrder = 0
-  end
-  object btnSubmitRN: TButton
-    Left = 72
-    Top = 16
-    Width = 65
-    Height = 25
-    Caption = #214'ffnen'
-    TabOrder = 1
-    OnClick = btnSubmitRNClick
-  end
   object sgRound: TStringGrid
     Left = 16
     Top = 56
@@ -44,7 +29,46 @@ object frmRounds: TfrmRounds
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 0
     OnDrawCell = sgRoundDrawCell
+  end
+  object editMResult: TEdit
+    Left = 328
+    Top = 16
+    Width = 33
+    Height = 33
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnKeyPress = editMResultKeyPress
+  end
+  object btnMResult: TButton
+    Left = 376
+    Top = 16
+    Width = 75
+    Height = 33
+    Caption = 'Eintragen'
+    TabOrder = 2
+    OnClick = btnMResultClick
+  end
+  object rbtnWin: TRadioButton
+    Left = 280
+    Top = 16
+    Width = 33
+    Height = 17
+    Caption = 'V'
+    TabOrder = 3
+  end
+  object rbtnLoose: TRadioButton
+    Left = 280
+    Top = 32
+    Width = 33
+    Height = 17
+    Caption = 'D'
+    TabOrder = 4
   end
 end

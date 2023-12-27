@@ -35,7 +35,7 @@ type
 var
   frmMain: TfrmMain;
   Tabs : Array[0..4] of TTab;
-  currentTab : Integer;
+  //currentTab : Integer;
 
 implementation
 
@@ -70,7 +70,7 @@ begin
     begin
       Tabs[currentTab].form.Hide;
       Tabs[newTab].form.Show;
-      currentTab := newTab;
+      //currentTab := newTab;
     end;
 end;
 
@@ -82,7 +82,7 @@ begin
   Tabs[1].form := frmParticipant;
   setTabStatus(1, false);
   Tabs[2].form := frmRounds;
-  setTabStatus(2, false);
+  setTabStatus(2, true);
   Tabs[3].form := frmKO;
   setTabStatus(3, false);
   Tabs[4].form := frmResults;
@@ -91,7 +91,7 @@ begin
   changeTab(0);
 end;
 
-// Buttons
+// Tab Buttons
 procedure TfrmMain.btnInformationClick(Sender: TObject);
 begin
   changeTab(0);

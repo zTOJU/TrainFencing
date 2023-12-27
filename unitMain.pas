@@ -91,7 +91,7 @@ begin
   changeTab(0);
 end;
 
-// Buttons
+// Tab Buttons
 procedure TfrmMain.btnInformationClick(Sender: TObject);
 begin
   changeTab(0);
