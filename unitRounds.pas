@@ -39,11 +39,13 @@ var text : String;
 begin
   text := sgRound.Cells[ACol, ARow];
 
+  // Draw empty matches
   if text = 'xxx'
     then begin
       sgRound.Canvas.Brush.Color := clBlack;
       sgRound.Canvas.FillRect(Rect);
     end
+  // Draw wins
   else if (Length(text) <> 0) and (text[1] = 'V')
     then begin
       sgRound.Canvas.Brush.Color := RGB(94, 219, 128);
@@ -51,6 +53,7 @@ begin
       sgRound.Canvas.Font.Color := clWhite;
       sgRound.Canvas.TextOut(Rect.Left+2, Rect.Top+2, text);
     end
+  // Draw looses
   else if (Length(text) <> 0) and (text[1] = 'D')
     then begin
       sgRound.Canvas.Brush.Color := RGB(219, 94, 94);
@@ -101,8 +104,12 @@ begin
   // Double check if the result is legal
   if (Length(mResult) = 1) and (sgRound.Col <> sgRound.Row) and (winLoosePrefix <> '')
     then begin
-      // TODO: Check if there is already a other result for this opp and D5?
-      sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
+      // TODO: Check if there is already a other result for this opp
+
+      if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) = 5)
+        then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein.')
+      else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
+
     end
     else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt!');
 end;
