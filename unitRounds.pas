@@ -94,6 +94,7 @@ var mResult : String;
 begin
   mResult := editMResult.Text;
 
+  // Choose V (win) or D (loose)
   if (rbtnWin.Checked = false) and (rbtnLoose.Checked = false)
     then ShowMessage('Bitte wähle Sieg (V) oder Niederlage (D) aus!')
   else if rbtnWin.Checked
@@ -101,17 +102,22 @@ begin
   else if rbtnLoose.Checked
     then winLoosePrefix := 'D';
 
-  // Double check if the result is legal
+  // Double check if the result is legal (1 num, not non-existing match, set wLprefix)
   if (Length(mResult) = 1) and (sgRound.Col <> sgRound.Row) and (winLoosePrefix <> '')
     then begin
       // TODO: Check if there is already a other result for this opp
 
-      if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) = 5)
-        then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein.')
-      else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
-
+      if length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0
+        then if sgRound.Cells[sgRound.Row, sgRound.Col][1] = winLoosePrefix
+          then ShowMessage('Du hast bereits an zu gehöriger Stelle den gleichen Ausgang des Gefechts eingetragen!');
+        else begin
+            // Check if D > 4 (not possible result)
+            if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) > 4)
+              then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein.')
+            else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
+        end;
     end
-    else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt!');
+  else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt!');
 end;
 
 procedure TfrmRounds.editMResultKeyPress(Sender: TObject; var Key: Char);
