@@ -13,11 +13,13 @@ type
     btnMResult: TButton;
     rbtnWin: TRadioButton;
     rbtnLoose: TRadioButton;
+    btnEndRound: TButton;
     procedure sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure FormShow(Sender: TObject);
     procedure btnMResultClick(Sender: TObject);
     procedure editMResultKeyPress(Sender: TObject; var Key: Char);
+    procedure btnEndRoundClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -29,7 +31,7 @@ var
 
 implementation
 
-uses unitInformation;
+uses unitInformation, unitMain;
 
 {$R *.dfm}
 
@@ -112,11 +114,12 @@ begin
         then if sgRound.Cells[sgRound.Row, sgRound.Col][1] = winLoosePrefix
             then sameResult := true;
 
+      // TODO: D cant be higher then V!!!!
       // Check if D > 4 (not possible result)
       if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) > 4)
         then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein.')
       else if sameResult
-        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang des Gefechts eingetragen!')
+        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen!')
       else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
     end
   else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt!');
@@ -129,6 +132,33 @@ begin
     then Key := #0
   else if (Key in ['0'..'5']) and (Length(editMResult.Text) >= 1)
     then Key := #0;
+end;
+
+procedure TfrmRounds.btnEndRoundClick(Sender: TObject);
+var x,y : Integer;
+    emptyMatches : Integer;
+begin
+  emptyMatches := 0;
+  // Check if all results are entered
+  for x:=1 to sgRound.ColCount - 1
+    do for y:=1 to sgRound.RowCount - 1
+      do if sgRound.Cells[x,y] = ''
+        then Inc(emptyMatches);
+
+  if emptyMatches = 0
+    then begin
+      // Hide unneeded elements
+      rbtnWin.Hide;
+      rbtnLoose.Hide;
+      editMResult.Hide;
+      btnMResult.Hide;
+      btnEndRound.Hide;
+
+      // Allow all tabs
+      unitMain.setTabStatus(3, true);
+      unitMain.setTabStatus(4, true);
+    end
+    else ShowMessage('Es fehlen noch ' + IntToStr(emptyMatches) + ' Ergebnisse!');
 end;
 
 end.

@@ -71,4 +71,13 @@ object frmRounds: TfrmRounds
     Caption = 'D'
     TabOrder = 4
   end
+  object btnEndRound: TButton
+    Left = 680
+    Top = 16
+    Width = 107
+    Height = 25
+    Caption = 'Vorrunde beenden'
+    TabOrder = 5
+    OnClick = btnEndRoundClick
+  end
 end
