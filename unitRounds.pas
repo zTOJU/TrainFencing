@@ -114,15 +114,21 @@ begin
         then if sgRound.Cells[sgRound.Row, sgRound.Col][1] = winLoosePrefix
             then sameResult := true;
 
-      // TODO: D cant be higher then V!!!!
       // Check if D > 4 (not possible result)
       if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) > 4)
         then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein.')
+      // Check sameResult
       else if sameResult
-        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen!')
+        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen.')
+      // Check if D result > V Result
+      else if (winLoosePrefix[1] = 'D') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
+        then if StrToInt(mResult) > StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
+          then ShowMessage('Der Fechter, der verloren hat, kann nicht mehr Treffer als der Gewinner erzielt haben.')
+          else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
+      // Set result (final step)
       else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
     end
-  else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt!');
+  else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt.');
 end;
 
 procedure TfrmRounds.editMResultKeyPress(Sender: TObject; var Key: Char);
