@@ -125,6 +125,11 @@ begin
         then if StrToInt(mResult) > StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
           then ShowMessage('Der Fechter, der verloren hat, kann nicht mehr Treffer als der Gewinner erzielt haben.')
           else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
+      // Check if V result < D Result
+      else if (winLoosePrefix[1] = 'V') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
+        then if StrToInt(mResult) < StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
+          then ShowMessage('Der Fechter, der gewonnen hat, kann nicht weniger Treffer als der Verlierer erzielt haben.')
+          else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
       // Set result (final step)
       else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
     end
