@@ -14,13 +14,14 @@ type
     rbtnWin: TRadioButton;
     rbtnLoose: TRadioButton;
     btnEndRound: TButton;
-    Button1: TButton;
+    btnDelResult: TButton;
     procedure sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure FormShow(Sender: TObject);
     procedure btnMResultClick(Sender: TObject);
     procedure editMResultKeyPress(Sender: TObject; var Key: Char);
     procedure btnEndRoundClick(Sender: TObject);
+    procedure btnDelResultClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -70,6 +71,7 @@ begin
     end;
 end;
 
+// Load names
 procedure TfrmRounds.FormShow(Sender: TObject);
 var i : Integer;
 begin
@@ -95,6 +97,7 @@ begin
     end;
 end;
 
+// Add new result
 procedure TfrmRounds.btnMResultClick(Sender: TObject);
 var mResult : String;
     winLoosePrefix : String;
@@ -148,6 +151,14 @@ begin
     then Key := #0
   else if (Key in ['0'..'5']) and (Length(editMResult.Text) >= 1)
     then Key := #0;
+end;
+
+// Delete result
+procedure TfrmRounds.btnDelResultClick(Sender: TObject);
+begin
+  if sgRound.Cells[sgRound.Col, sgRound.Row][1] <> 'x'
+    then sgRound.Cells[sgRound.Col, sgRound.Row] := ''
+    else ShowMessage('Kein gültiges Feld ausgewählt.');
 end;
 
 procedure TfrmRounds.btnEndRoundClick(Sender: TObject);

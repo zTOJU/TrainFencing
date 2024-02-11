@@ -80,12 +80,13 @@ object frmRounds: TfrmRounds
     TabOrder = 5
     OnClick = btnEndRoundClick
   end
-  object Button1: TButton
+  object btnDelResult: TButton
     Left = 456
     Top = 16
     Width = 75
-    Height = 25
-    Caption = 'Button1'
+    Height = 33
+    Caption = 'L'#246'schen'
     TabOrder = 6
+    OnClick = btnDelResultClick
   end
 end
