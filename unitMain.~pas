@@ -82,7 +82,7 @@ begin
   Tabs[1].form := frmParticipant;
   setTabStatus(1, false);
   Tabs[2].form := frmRounds;
-  setTabStatus(2, true);
+  setTabStatus(2, false);
   Tabs[3].form := frmKO;
   setTabStatus(3, false);
   Tabs[4].form := frmResults;

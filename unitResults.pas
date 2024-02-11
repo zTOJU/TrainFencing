@@ -4,10 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, Grids;
 
 type
   TfrmResults = class(TForm)
+    sgNames: TStringGrid;
   private
     { Private-Deklarationen }
   public

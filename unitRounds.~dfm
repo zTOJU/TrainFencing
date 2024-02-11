@@ -47,7 +47,7 @@ object frmRounds: TfrmRounds
     OnKeyPress = editMResultKeyPress
   end
   object btnMResult: TButton
-    Left = 376
+    Left = 368
     Top = 16
     Width = 75
     Height = 33
@@ -79,5 +79,13 @@ object frmRounds: TfrmRounds
     Caption = 'Vorrunde beenden'
     TabOrder = 5
     OnClick = btnEndRoundClick
+  end
+  object Button1: TButton
+    Left = 456
+    Top = 16
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 6
   end
 end

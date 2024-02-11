@@ -13,4 +13,23 @@ object frmResults: TfrmResults
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object sgNames: TStringGrid
+    Left = 16
+    Top = 16
+    Width = 769
+    Height = 433
+    ColCount = 1
+    DefaultColWidth = 769
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    ScrollBars = ssVertical
+    TabOrder = 0
+  end
 end

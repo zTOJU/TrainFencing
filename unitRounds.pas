@@ -14,6 +14,7 @@ type
     rbtnWin: TRadioButton;
     rbtnLoose: TRadioButton;
     btnEndRound: TButton;
+    Button1: TButton;
     procedure sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure FormShow(Sender: TObject);
@@ -26,12 +27,16 @@ type
     { Public-Deklarationen }
   end;
 
+  TRoundResult = Record
+    name : String;
+    index : Integer;
+  end;
 var
   frmRounds: TfrmRounds;
 
 implementation
 
-uses unitInformation, unitMain;
+uses unitInformation, unitMain, unitResults;
 
 {$R *.dfm}
 
@@ -148,6 +153,11 @@ end;
 procedure TfrmRounds.btnEndRoundClick(Sender: TObject);
 var x,y : Integer;
     emptyMatches : Integer;
+    iList : Integer;
+
+    results : Array of TRoundResult;
+    tempName : String;
+    iName, iResult : Integer;
 begin
   emptyMatches := 0;
   // Check if all results are entered
@@ -168,6 +178,32 @@ begin
       // Allow all tabs
       unitMain.setTabStatus(3, true);
       unitMain.setTabStatus(4, true);
+
+      // Get data (calc index)
+      SetLength(results, sgRound.RowCount - 1);
+      for iName:=0 to length(results) - 1
+        do begin
+          tempName := sgRound.Cells[0, iName + 1];
+          results[iName].name := Copy(tempName, 3, length(name));
+          for iResult:=1 to sgRound.ColCount - 1
+            do if sgRound.Cells[iResult, iName+1][1] <> 'x'
+                then if sgRound.Cells[iResult, iName+1][1] = 'V'
+                  then results[iName].index := results[iName].index + StrToInt(sgRound.Cells[iResult, iName+1][2])
+                  else results[iName].index := results[iName].index - StrToInt(sgRound.Cells[iResult, iName+1][2]);
+
+          ShowMessage(results[iName].name + ': ' + IntToStr(results[iName].index));
+        end;
+
+      // Fill result list
+      {
+        quicksort algo to sort with points index (maybe display index etc)
+
+      for iList:=0 to High(results)
+        do begin
+          frmResults.sgNames.Cells[0, iList] := IntToStr(iList+1) + '. ' + results[iList].name;
+          if iList > 0
+            then frmResults.sgNames.RowCount := frmResults.sgNames.RowCount + 1;
+        end;  }
     end
     else ShowMessage('Es fehlen noch ' + IntToStr(emptyMatches) + ' Ergebnisse!');
 end;

@@ -71,7 +71,8 @@ begin
       Tabs[currentTab].form.Hide;
       Tabs[newTab].form.Show;
       currentTab := newTab;
-    end;
+    end
+  else ShowMessage('Kein Zugriff aktuell!');
 end;
 
 // Init
