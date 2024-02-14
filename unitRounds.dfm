@@ -52,6 +52,12 @@ object frmRounds: TfrmRounds
     Width = 75
     Height = 33
     Caption = 'Eintragen'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     OnClick = btnMResultClick
   end

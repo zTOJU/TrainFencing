@@ -27,9 +27,15 @@ type
     { Public-Deklarationen }
   end;
 
+  // Declaration of all custom data types
   TTab = Record
     form : TForm;
     status : Boolean;
+  end;
+
+  TRoundResult = Record
+    name : String;
+    index : Integer;
   end;
 
 var
