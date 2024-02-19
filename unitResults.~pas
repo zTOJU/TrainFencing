@@ -41,13 +41,13 @@ var iSort, jSort, iList : Integer;
 begin
   // Sort (Bubble-Sort algorithm)
   for iSort := High(data) downto Low(data) + 1
-    do for jSort := Low(data) to iSort - 1 do
-      if data[jSort].index < data[jSort + 1].index
-        then begin
-          tempData := data[jSort];
-          data[jSort] := data[jSort + 1];
-          data[jSort + 1] := tempData;
-        end;
+    do for jSort := Low(data) to iSort - 1
+      do if data[jSort].index < data[jSort + 1].index
+          then begin
+            tempData := data[jSort];
+            data[jSort] := data[jSort + 1];
+            data[jSort + 1] := tempData;
+          end;
 
   // Fill list
   frmResults.sgResults.RowCount := High(data) + 2;

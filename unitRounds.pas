@@ -189,15 +189,16 @@ begin
 
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);
-      for iName:=0 to length(results) - 1
+      for iName := 0 to length(results) - 1
         do begin
           tempName := sgRound.Cells[0, iName + 1];
-          results[iName].name := Copy(tempName, 3, length(name));
-          for iResult:=1 to sgRound.ColCount - 1
+          results[iName].name := Copy(tempName, 3, length(tempName));
+          for iResult := 1 to sgRound.ColCount - 1
             do if sgRound.Cells[iResult, iName+1][1] <> 'x'
-                then if sgRound.Cells[iResult, iName+1][1] = 'V'
-                  then results[iName].index := results[iName].index + StrToInt(sgRound.Cells[iResult, iName+1][2])
-                  else results[iName].index := results[iName].index - StrToInt(sgRound.Cells[iResult, iName+1][2]);
+              then results[iName].index := results[iName].index + StrToInt(sgRound.Cells[iResult, iName+1][2]);
+          for iResult := 1 to sgRound.RowCount - 1
+            do if sgRound.Cells[iName+1, iResult][1] <> 'x'
+              then results[iName].index := results[iName].index - StrToInt(sgRound.Cells[iName+1, iResult][2]);
         end;
 
       unitResults.generateList(results);
