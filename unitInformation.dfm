@@ -3,7 +3,7 @@ object frmInformation: TfrmInformation
   Top = 220
   Width = 818
   Height = 504
-  Caption = 'Informationen'
+  Caption = 'Start'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -40,31 +40,31 @@ object frmInformation: TfrmInformation
     ParentFont = False
   end
   object labNameCount: TLabel
-    Left = 24
-    Top = 400
+    Left = 380
+    Top = 408
     Width = 48
     Height = 13
     Caption = 'Gesamt: 0'
   end
   object listNames: TListBox
-    Left = 24
-    Top = 144
+    Left = 284
+    Top = 150
     Width = 249
     Height = 249
     ItemHeight = 13
     TabOrder = 0
   end
   object editName: TEdit
-    Left = 24
-    Top = 112
+    Left = 284
+    Top = 120
     Width = 249
     Height = 21
     Hint = 'Name des Teilnehmers'
     TabOrder = 1
   end
   object btnAddName: TButton
-    Left = 280
-    Top = 112
+    Left = 544
+    Top = 120
     Width = 75
     Height = 25
     Caption = 'Hinzuf'#252'gen'
@@ -72,8 +72,8 @@ object frmInformation: TfrmInformation
     OnClick = btnAddNameClick
   end
   object btnDelName: TButton
-    Left = 280
-    Top = 144
+    Left = 544
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'L'#246'schen'
@@ -81,8 +81,8 @@ object frmInformation: TfrmInformation
     OnClick = btnDelNameClick
   end
   object btnSubmitNames: TButton
-    Left = 280
-    Top = 176
+    Left = 544
+    Top = 184
     Width = 75
     Height = 25
     Caption = 'Best'#228'tigen'

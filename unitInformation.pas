@@ -69,6 +69,8 @@ begin
       btnAddName.Hide;
       btnDelName.Hide;
       btnSubmitNames.Hide;
+      listNames.Hide;
+      labNameCount.Hide;
 
       // Create participants list
       unitMain.setTabStatus(1, true);

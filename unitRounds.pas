@@ -185,7 +185,6 @@ begin
 
       // Allow all tabs
       unitMain.setTabStatus(3, true);
-      unitMain.setTabStatus(4, true);
 
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);

@@ -13,13 +13,11 @@ type
     btnParticipant: TButton;
     btnInformation: TButton;
     btnRounds: TButton;
-    btnKO: TButton;
     btnResults: TButton;
     procedure FormShow(Sender: TObject);
     procedure btnParticipantClick(Sender: TObject);
     procedure btnInformationClick(Sender: TObject);
     procedure btnRoundsClick(Sender: TObject);
-    procedure btnKOClick(Sender: TObject);
     procedure btnResultsClick(Sender: TObject);
   private
     { Private-Deklarationen }
@@ -27,14 +25,20 @@ type
     { Public-Deklarationen }
   end;
 
+  // Declaration of all custom data types
   TTab = Record
     form : TForm;
     status : Boolean;
   end;
 
+  TRoundResult = Record
+    name : String;
+    index : Integer;
+  end;
+
 var
   frmMain: TfrmMain;
-  Tabs : Array[0..4] of TTab;
+  Tabs : Array[0..3] of TTab;
   currentTab : Integer;
 
 implementation
@@ -47,8 +51,7 @@ uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
   Informationen:      0
   Teilnehmer:         1
   Rundenübersicht:    2
-  Direktausscheidung: 3
-  Platzierung:        4
+  Platzierung:        3
 }
 
 // Check if switching to a new tab is allowed
@@ -84,10 +87,8 @@ begin
   setTabStatus(1, false);
   Tabs[2].form := frmRounds;
   setTabStatus(2, false);
-  Tabs[3].form := frmKO;
+  Tabs[3].form := frmResults;
   setTabStatus(3, false);
-  Tabs[4].form := frmResults;
-  setTabStatus(4, false);
 
   changeTab(0);
 end;
@@ -108,14 +109,9 @@ begin
   changeTab(2);
 end;
 
-procedure TfrmMain.btnKOClick(Sender: TObject);
-begin
-  changeTab(3);
-end;
-
 procedure TfrmMain.btnResultsClick(Sender: TObject);
 begin
-  changeTab(4);
+  changeTab(3);
 end;
 
 end.

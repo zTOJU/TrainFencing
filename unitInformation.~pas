@@ -28,7 +28,6 @@ type
 var
   frmInformation: TfrmInformation;
   nameCount : Integer;
-  roundSize : Integer;
 
 implementation
 
@@ -70,17 +69,6 @@ begin
       btnAddName.Hide;
       btnDelName.Hide;
       btnSubmitNames.Hide;
-
-      // Calc round size
-      case nameCount of
-        2,4 : roundSize := 2;
-        3,5,6 : roundSize := 3;
-        7,8 : roundSize := 4;
-        9,10 : roundSize := 5;
-        11,12 : roundSize := 6;
-        13..99 : roundSize := 7;
-      end;
-      labNameCount.Caption := labNameCount.Caption + ' (Rundengröße: ' + IntToStr(roundSize) + ')';
 
       // Create participants list
       unitMain.setTabStatus(1, true);

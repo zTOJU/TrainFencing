@@ -6,7 +6,6 @@ uses
   unitInformation in 'unitInformation.pas' {frmInformation},
   unitParticipant in 'unitParticipant.pas' {frmParticipant},
   unitRounds in 'unitRounds.pas' {frmRounds},
-  unitKO in 'unitKO.pas' {frmKO},
   unitResults in 'unitResults.pas' {frmResults};
 
 {$R *.res}

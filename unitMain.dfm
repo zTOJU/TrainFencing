@@ -15,9 +15,9 @@ object frmMain: TfrmMain
   PixelsPerInch = 96
   TextHeight = 13
   object btnParticipant: TButton
-    Left = 168
+    Left = 216
     Top = 16
-    Width = 146
+    Width = 160
     Height = 25
     Caption = 'Teilnehmer'
     Font.Charset = ANSI_CHARSET
@@ -32,9 +32,9 @@ object frmMain: TfrmMain
   object btnInformation: TButton
     Left = 8
     Top = 16
-    Width = 146
+    Width = 160
     Height = 25
-    Caption = 'Informationen'
+    Caption = 'Start'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -45,9 +45,9 @@ object frmMain: TfrmMain
     OnClick = btnInformationClick
   end
   object btnRounds: TButton
-    Left = 328
+    Left = 424
     Top = 16
-    Width = 146
+    Width = 160
     Height = 25
     Caption = 'Runden'#252'bersicht'
     Font.Charset = ANSI_CHARSET
@@ -59,25 +59,10 @@ object frmMain: TfrmMain
     TabOrder = 2
     OnClick = btnRoundsClick
   end
-  object btnKO: TButton
-    Left = 488
-    Top = 16
-    Width = 146
-    Height = 25
-    Caption = 'Direktausscheidung'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -13
-    Font.Name = 'Montserrat'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    OnClick = btnKOClick
-  end
   object btnResults: TButton
-    Left = 648
+    Left = 632
     Top = 16
-    Width = 146
+    Width = 160
     Height = 25
     Caption = 'Platzierung'
     Font.Charset = ANSI_CHARSET
@@ -86,7 +71,7 @@ object frmMain: TfrmMain
     Font.Name = 'Montserrat'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btnResultsClick
   end
 end
