@@ -81,8 +81,8 @@ object frmRounds: TfrmRounds
     Left = 680
     Top = 16
     Width = 107
-    Height = 25
-    Caption = 'Vorrunde beenden'
+    Height = 33
+    Caption = 'Runde beenden'
     TabOrder = 5
     OnClick = btnEndRoundClick
   end

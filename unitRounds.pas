@@ -67,7 +67,7 @@ begin
     end;
 end;
 
-// Load names
+// Load names (TODO: maybe separated function)
 procedure TfrmRounds.FormShow(Sender: TObject);
 var i : Integer;
 begin
@@ -183,24 +183,23 @@ begin
       btnDelResult.Hide;
       btnEndRound.Hide;
 
-      // Allow all tabs
-      unitMain.setTabStatus(3, true);
-
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);
       for iName := 0 to length(results) - 1
         do begin
           tempName := sgRound.Cells[0, iName + 1];
           results[iName].name := Copy(tempName, 3, length(tempName));
-          for iResult := 1 to sgRound.ColCount - 1
+          for iResult := 1 to sgRound.ColCount - 1 // + points
             do if sgRound.Cells[iResult, iName+1][1] <> 'x'
               then results[iName].index := results[iName].index + StrToInt(sgRound.Cells[iResult, iName+1][2]);
-          for iResult := 1 to sgRound.RowCount - 1
+          for iResult := 1 to sgRound.RowCount - 1 // - points
             do if sgRound.Cells[iName+1, iResult][1] <> 'x'
               then results[iName].index := results[iName].index - StrToInt(sgRound.Cells[iName+1, iResult][2]);
         end;
 
+      // Generate result list & allow result tab
       unitResults.generateList(results);
+      unitMain.setTabStatus(3, true);
     end
     else ShowMessage('Es fehlen noch ' + IntToStr(emptyMatches) + ' Ergebnisse!');
 end;

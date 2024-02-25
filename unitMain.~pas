@@ -43,7 +43,7 @@ var
 
 implementation
 
-uses unitInformation, unitParticipant, unitRounds, unitKO, unitResults;
+uses unitInformation, unitParticipant, unitRounds, unitResults;
 
 {$R *.dfm}
 

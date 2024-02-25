@@ -60,7 +60,6 @@ begin
 end;
 
 procedure TfrmInformation.btnSubmitNamesClick(Sender: TObject);
-var i : Integer;
 begin
   if listNames.Count > 1
     then begin
@@ -73,13 +72,8 @@ begin
       labNameCount.Hide;
 
       // Create participants list
+      unitParticipant.generateList(frmInformation.listNames.Items);
       unitMain.setTabStatus(1, true);
-      for i:=0 to nameCount - 1
-        do begin
-          frmParticipant.sgNames.Cells[0, i] := IntToStr(i+1) + '. ' + frmInformation.listNames.Items[i];
-          if i > 0
-            then frmParticipant.sgNames.RowCount := frmParticipant.sgNames.RowCount + 1;
-        end;
 
       // Create rounds
       unitMain.setTabStatus(2, true);

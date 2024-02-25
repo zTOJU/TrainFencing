@@ -11,6 +11,7 @@ object frmParticipant: TfrmParticipant
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object sgNames: TStringGrid
@@ -21,8 +22,7 @@ object frmParticipant: TfrmParticipant
     ColCount = 1
     DefaultColWidth = 769
     FixedCols = 0
-    RowCount = 1
-    FixedRows = 0
+    RowCount = 2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
