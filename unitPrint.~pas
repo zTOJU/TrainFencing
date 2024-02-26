@@ -1,0 +1,14 @@
+unit unitPrint;
+
+interface
+
+procedure print();
+
+implementation
+
+procedure print();
+begin
+  ShowMessage('test print');
+end;
+
+end.
