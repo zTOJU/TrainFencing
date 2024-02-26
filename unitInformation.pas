@@ -31,7 +31,7 @@ var
 
 implementation
 
-uses unitMain, unitParticipant;
+uses unitMain, unitParticipant, unitRounds;
 
 {$R *.dfm}
 
@@ -42,7 +42,7 @@ begin
     then begin
       listNames.Items.Add(editName.Text);
       editName.Text := '';
-      nameCount := nameCount + 1;
+      Inc(nameCount);
       labNameCount.Caption := 'Gesamt: ' + IntToStr(nameCount);
     end;
 end;
@@ -53,7 +53,7 @@ begin
   if listNames.ItemIndex > -1
     then begin
       listNames.Items.Delete(listNames.ItemIndex);
-      nameCount := nameCount - 1;
+      Dec(nameCount);
       labNameCount.Caption := 'Gesamt: ' + IntToStr(nameCount);
       end
     else ShowMessage('Bitte erst einen Namen auswählen!');
@@ -76,6 +76,7 @@ begin
       unitMain.setTabStatus(1, true);
 
       // Create rounds
+      unitRounds.generateRound(frmInformation.listNames.Items);
       unitMain.setTabStatus(2, true);
     end
     else ShowMessage('Bitte füge erst mindestens 2 Namen hinzu!');

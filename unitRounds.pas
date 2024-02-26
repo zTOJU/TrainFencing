@@ -6,6 +6,8 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, StdCtrls;
 
+procedure generateRound(data : TStrings);
+
 type
   TfrmRounds = class(TForm)
     sgRound: TStringGrid;
@@ -17,7 +19,6 @@ type
     btnDelResult: TButton;
     procedure sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
-    procedure FormShow(Sender: TObject);
     procedure btnMResultClick(Sender: TObject);
     procedure editMResultKeyPress(Sender: TObject; var Key: Char);
     procedure btnEndRoundClick(Sender: TObject);
@@ -67,30 +68,24 @@ begin
     end;
 end;
 
-// Load names (TODO: maybe separated function)
-procedure TfrmRounds.FormShow(Sender: TObject);
+// Generate round overview
+procedure generateRound(data : TStrings);
 var i : Integer;
 begin
-  if sgRound.RowCount < 3
-    then begin
-      sgRound.ColWidths[0] := 150;
+  frmRounds.sgRound.ColWidths[0] := 150;
 
-      // Add names
-      for i:=0 to frmInformation.listNames.Count - 1
-        do begin
-          sgRound.Cells[0, i+1] := IntToStr(i+1) + ' ' + frmInformation.listNames.Items[i];
-          sgRound.Cells[i+1, 0] := IntToStr(i+1);
-          if i > 0
-            then begin
-              sgRound.RowCount := sgRound.RowCount + 1;
-              sgRound.ColCount := sgRound.ColCount + 1;
-            end;
-          end;
-
-        // Add empty matches
-        for i:=1 to sgRound.RowCount
-          do sgRound.Cells[i,i] := 'xxx';
+  // Add names
+  frmRounds.sgRound.RowCount := data.Count + 1;
+  frmRounds.sgRound.ColCount := data.Count + 1;
+  for i := 0 to data.Count - 1
+    do begin
+      frmRounds.sgRound.Cells[0, i+1] := IntToStr(i+1) + ' ' + data[i];
+      frmRounds.sgRound.Cells[i+1, 0] := IntToStr(i+1); 
     end;
+
+  // Add empty matches
+  for i := 1 to frmRounds.sgRound.RowCount
+    do frmRounds.sgRound.Cells[i, i] := 'xxx';
 end;
 
 // Add new result
@@ -140,9 +135,9 @@ begin
   else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt.');
 end;
 
+// Allow only numbers between 0-5 and backspace
 procedure TfrmRounds.editMResultKeyPress(Sender: TObject; var Key: Char);
 begin
-  // Allow only numbers between 0-5 and backspace
   if not (Key in ['0'..'5', #8])
     then Key := #0
   else if (Key in ['0'..'5']) and (Length(editMResult.Text) >= 1)

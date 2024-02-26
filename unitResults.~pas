@@ -12,7 +12,6 @@ procedure generateList(data : Array of TRoundResult);
 type
   TfrmResults = class(TForm)
     sgResults: TStringGrid;
-    procedure FormShow(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -26,19 +25,17 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmResults.FormShow(Sender: TObject);
-begin
-  // Init StringGrid
-  sgResults.Cells[0, 0] := 'Name';
-  sgResults.Cells[1, 0] := 'Index';
-  sgResults.ColWidths[0] := 600;
-  sgResults.ColWidths[1] := 164;
-end;
-
+// Generate results list
 procedure generateList(data : Array of TRoundResult);
 var iSort, jSort, iList : Integer;
     tempData : TRoundResult;
 begin
+  // Init StringGrid
+  frmResults.sgResults.Cells[0, 0] := 'Name';
+  frmResults.sgResults.Cells[1, 0] := 'Index';
+  frmResults.sgResults.ColWidths[0] := 600;
+  frmResults.sgResults.ColWidths[1] := 164;
+
   // Sort (Bubble-Sort algorithm)
   for iSort := High(data) downto Low(data) + 1
     do for jSort := Low(data) to iSort - 1
@@ -51,7 +48,7 @@ begin
 
   // Fill list
   frmResults.sgResults.RowCount := High(data) + 2;
-  for iList:=0 to High(data)
+  for iList := 0 to High(data)
     do begin
       frmResults.sgResults.Cells[0, iList+1] := IntToStr(iList+1) + '. ' + data[iList].name;
       frmResults.sgResults.Cells[1, iList+1] := IntToStr(data[iList].index);

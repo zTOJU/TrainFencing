@@ -48,7 +48,7 @@ uses unitInformation, unitParticipant, unitRounds, unitResults;
 {$R *.dfm}
 
 {
-  Informationen:      0
+  Start:              0
   Teilnehmer:         1
   Rundenübersicht:    2
   Platzierung:        3

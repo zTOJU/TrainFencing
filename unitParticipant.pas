@@ -11,7 +11,6 @@ procedure generateList(data : TStrings);
 type
   TfrmParticipant = class(TForm)
     sgNames: TStringGrid;
-    procedure FormCreate(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -25,14 +24,13 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmParticipant.FormCreate(Sender: TObject);
-begin
-  sgNames.Cells[0, 0] := 'Name';
-end;
-
+// Generate participants list
 procedure generateList(data : TStrings);
 var i : Integer;
 begin
+  // Init StringGrid
+  frmParticipant.sgNames.Cells[0, 0] := 'Name';
+
   // Fill list
   frmParticipant.sgNames.RowCount := data.Count + 1;
   for i := 1 to data.Count

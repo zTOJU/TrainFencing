@@ -16,7 +16,6 @@ begin
   Application.CreateForm(TfrmInformation, frmInformation);
   Application.CreateForm(TfrmParticipant, frmParticipant);
   Application.CreateForm(TfrmRounds, frmRounds);
-  Application.CreateForm(TfrmKO, frmKO);
   Application.CreateForm(TfrmResults, frmResults);
   Application.Run;
 end.
