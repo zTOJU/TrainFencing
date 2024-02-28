@@ -4,15 +4,19 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, StdCtrls;
+  Dialogs, Grids, StdCtrls, Printers;
 
-procedure print();
+procedure printList(printIndex : Integer; header : String; data : Array of String);
 
 implementation
 
-procedure print();
+procedure printList(printIndex : Integer; header : String; data : Array of String);
+var i : Integer;
 begin
-  ShowMessage('test print');
+  Printer.PrinterIndex := printIndex;
+
+  for i := 0 to High(data)
+    do ShowMessage(data[i]);
 end;
 
 end.

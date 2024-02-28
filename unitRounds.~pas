@@ -17,6 +17,7 @@ type
     rbtnLoose: TRadioButton;
     btnEndRound: TButton;
     btnDelResult: TButton;
+    btnPrint: TButton;
     procedure sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure btnMResultClick(Sender: TObject);

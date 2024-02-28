@@ -181,7 +181,7 @@ begin
 
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);
-      for iName := 0 to length(results) - 1
+      for iName := 0 to High(results)
         do begin
           tempName := sgRound.Cells[0, iName + 1];
           results[iName].name := Copy(tempName, 3, length(tempName));
