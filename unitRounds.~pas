@@ -153,9 +153,10 @@ end;
 // Delete result
 procedure TfrmRounds.btnDelResultClick(Sender: TObject);
 begin
-  if sgRound.Cells[sgRound.Col, sgRound.Row][1] <> 'x'
-    then sgRound.Cells[sgRound.Col, sgRound.Row] := ''
-    else ShowMessage('Kein gültiges Feld ausgewählt.');
+  if length(sgRound.Cells[sgRound.Col, sgRound.Row]) > 0
+    then if (sgRound.Cells[sgRound.Col, sgRound.Row][1] <> 'x')
+      then sgRound.Cells[sgRound.Col, sgRound.Row] := ''
+  else ShowMessage('Dieses Feld ist leer.');
 end;
 
 // End Round and calc results
