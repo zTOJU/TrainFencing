@@ -1,10 +1,12 @@
 object frmMain: TfrmMain
   Left = 179
   Top = 123
-  Width = 818
-  Height = 100
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Menu'
-  Color = clBtnFace
+  ClientHeight = 61
+  ClientWidth = 802
+  Color = clGradientActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

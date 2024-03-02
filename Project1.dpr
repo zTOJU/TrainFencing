@@ -13,6 +13,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Training competition fencing';
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmInformation, frmInformation);
   Application.CreateForm(TfrmParticipant, frmParticipant);
