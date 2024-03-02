@@ -11,6 +11,7 @@ object frmRounds: TfrmRounds
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object sgRound: TStringGrid
@@ -77,9 +78,9 @@ object frmRounds: TfrmRounds
     TabOrder = 4
   end
   object btnEndRound: TButton
-    Left = 568
+    Left = 248
     Top = 16
-    Width = 105
+    Width = 137
     Height = 33
     Caption = 'Runde beenden'
     TabOrder = 5
@@ -95,11 +96,28 @@ object frmRounds: TfrmRounds
     OnClick = btnDelResultClick
   end
   object btnPrint: TButton
-    Left = 680
+    Left = 392
     Top = 16
-    Width = 105
+    Width = 137
     Height = 33
     Caption = 'Drucken'
     TabOrder = 7
+    OnClick = btnPrintClick
+  end
+  object cbPrinters: TComboBox
+    Left = 536
+    Top = 16
+    Width = 249
+    Height = 33
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ItemHeight = 25
+    ParentFont = False
+    TabOrder = 8
+    Text = 'cbPrinters'
+    OnDropDown = cbPrintersDropDown
   end
 end

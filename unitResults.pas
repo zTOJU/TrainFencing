@@ -87,7 +87,6 @@ begin
 
   // Print
   unitPrint.printList(cbPrinters.ItemIndex, 'Ergebnisse', data);
-
 end;
 
 end.

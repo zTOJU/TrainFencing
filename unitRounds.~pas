@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, StdCtrls;
+  Dialogs, Grids, StdCtrls, Printers;
 
 procedure generateRound(data : TStrings);
 
@@ -18,12 +18,16 @@ type
     btnEndRound: TButton;
     btnDelResult: TButton;
     btnPrint: TButton;
+    cbPrinters: TComboBox;
     procedure sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure btnMResultClick(Sender: TObject);
     procedure editMResultKeyPress(Sender: TObject; var Key: Char);
     procedure btnEndRoundClick(Sender: TObject);
     procedure btnDelResultClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure cbPrintersDropDown(Sender: TObject);
+    procedure btnPrintClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -35,10 +39,11 @@ var
 
 implementation
 
-uses unitInformation, unitMain, unitResults;
+uses unitInformation, unitMain, unitResults, unitPrint;
 
 {$R *.dfm}
 
+// Draw results (cells)
 procedure TfrmRounds.sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
   Rect: TRect; State: TGridDrawState);
 var text : String;
@@ -181,7 +186,7 @@ begin
 
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);
-      for iName := 0 to length(results) - 1
+      for iName := 0 to High(results)
         do begin
           tempName := sgRound.Cells[0, iName + 1];
           results[iName].name := Copy(tempName, 3, length(tempName));
@@ -198,6 +203,25 @@ begin
       unitMain.setTabStatus(3, true);
     end
     else ShowMessage('Es fehlen noch ' + IntToStr(emptyMatches) + ' Ergebnisse!');
+end;
+
+// Add printers and select "Microsoft Print to PDF" as default
+procedure TfrmRounds.FormCreate(Sender: TObject);
+begin
+  cbPrinters.Items := Printer.Printers;
+  cbPrinters.ItemIndex := cbPrinters.Items.IndexOf('Microsoft Print to PDF');
+end;
+
+// Reload printers
+procedure TfrmRounds.cbPrintersDropDown(Sender: TObject);
+begin
+  cbPrinters.Items := Printer.Printers;
+end;
+
+// Print round
+procedure TfrmRounds.btnPrintClick(Sender: TObject);
+begin
+  unitPrint.printRound(cbPrinters.ItemIndex);
 end;
 
 end.
