@@ -39,6 +39,9 @@ begin
   for i := 0 to High(data)
     do Printer.Canvas.TextOut(350, 650 + i * 120, data[i]);
   Printer.EndDoc;
+
+  // Done message
+  ShowMessage(header + ' erfolgreich gedruckt!');
 end;
 
 end.

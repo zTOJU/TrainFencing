@@ -15,9 +15,9 @@ object frmResults: TfrmResults
   TextHeight = 13
   object sgResults: TStringGrid
     Left = 16
-    Top = 16
+    Top = 56
     Width = 769
-    Height = 433
+    Height = 393
     ColCount = 2
     DefaultColWidth = 382
     FixedCols = 0
@@ -30,5 +30,13 @@ object frmResults: TfrmResults
     ParentFont = False
     ScrollBars = ssVertical
     TabOrder = 0
+  end
+  object btnPrint: TButton
+    Left = 16
+    Top = 16
+    Width = 769
+    Height = 33
+    Caption = 'Drucken'
+    TabOrder = 1
   end
 end

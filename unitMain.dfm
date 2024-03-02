@@ -64,7 +64,7 @@ object frmMain: TfrmMain
     Top = 16
     Width = 160
     Height = 25
-    Caption = 'Platzierung'
+    Caption = 'Ergebnisse'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13

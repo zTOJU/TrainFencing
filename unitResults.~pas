@@ -5,13 +5,14 @@ interface
 // Already defined unitMain here to use my custom data types and make the generateList func accessible from anywhere
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, unitMain;
+  Dialogs, Grids, unitMain, StdCtrls;
 
 procedure generateList(data : Array of TRoundResult);
 
 type
   TfrmResults = class(TForm)
     sgResults: TStringGrid;
+    btnPrint: TButton;
   private
     { Private-Deklarationen }
   public

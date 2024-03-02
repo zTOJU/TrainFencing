@@ -5,7 +5,7 @@ interface
 // Already defined unitMain here to use my custom data types and make the generateList func accessible from anywhere
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, unitMain, StdCtrls;
+  Dialogs, Grids, unitMain, StdCtrls, Printers;
 
 procedure generateList(data : Array of TRoundResult);
 
@@ -13,6 +13,10 @@ type
   TfrmResults = class(TForm)
     sgResults: TStringGrid;
     btnPrint: TButton;
+    cbPrinters: TComboBox;
+    procedure FormCreate(Sender: TObject);
+    procedure cbPrintersDropDown(Sender: TObject);
+    procedure btnPrintClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -23,6 +27,8 @@ var
   frmResults: TfrmResults;
 
 implementation
+
+uses unitPrint;
 
 {$R *.dfm}
 
@@ -54,6 +60,34 @@ begin
       frmResults.sgResults.Cells[0, iList+1] := IntToStr(iList+1) + '. ' + data[iList].name;
       frmResults.sgResults.Cells[1, iList+1] := IntToStr(data[iList].index);
     end;
+end;
+
+// Add printers and select "Microsoft Print to PDF" as default
+procedure TfrmResults.FormCreate(Sender: TObject);
+begin
+  cbPrinters.Items := Printer.Printers;
+  cbPrinters.ItemIndex := cbPrinters.Items.IndexOf('Microsoft Print to PDF');
+end;
+
+// Reload printers
+procedure TfrmResults.cbPrintersDropDown(Sender: TObject);
+begin
+  cbPrinters.Items := Printer.Printers;
+end;
+
+// Print results list
+procedure TfrmResults.btnPrintClick(Sender: TObject);
+var data : Array of String;
+    i    : Integer;
+begin
+  // Get data
+  SetLength(data, sgResults.RowCount - 1);
+  for i := 0 to High(data)
+    do data[i] := sgResults.Cells[0, i + 1];
+
+  // Print
+  unitPrint.printList(cbPrinters.ItemIndex, 'Ergebnisse', data);
+
 end;
 
 end.

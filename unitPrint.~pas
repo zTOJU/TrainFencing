@@ -29,7 +29,7 @@ begin
   Printer.Canvas.TextOut(300, 300, header);
   // Date
   Printer.Canvas.Font.Size := 12;
-  Printer.Canvas.TextOut(Printer.PageWidth - Printer.Canvas.TextWidth(dateString) - 300, 500, dateString);
+  Printer.Canvas.TextOut(Printer.PageWidth - Printer.Canvas.TextWidth(dateString) - 300, 450, dateString);
   // Line
   Printer.Canvas.Pen.Width := 5;
   Printer.Canvas.MoveTo(300, 600);
