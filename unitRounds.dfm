@@ -1,10 +1,12 @@
 object frmRounds: TfrmRounds
   Left = 179
   Top = 220
-  Width = 818
-  Height = 504
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Runden'#252'bersicht'
-  Color = clBtnFace
+  ClientHeight = 465
+  ClientWidth = 802
+  Color = clGradientActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

@@ -183,6 +183,8 @@ begin
       btnMResult.Hide;
       btnDelResult.Hide;
       btnEndRound.Hide;
+      btnPrint.Hide;
+      cbPrinters.Hide;
 
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);

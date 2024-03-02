@@ -31,7 +31,20 @@ uses unitPrint;
 
 {$R *.dfm}
 
-// Add printers and select Microsoft to PDF as default
+// Generate participants list
+procedure generateList(data : TStrings);
+var i : Integer;
+begin
+  // Init StringGrid
+  frmParticipant.sgNames.Cells[0, 0] := 'Name';
+
+  // Fill list
+  frmParticipant.sgNames.RowCount := data.Count + 1;
+  for i := 1 to data.Count
+    do frmParticipant.sgNames.Cells[0, i] := IntToStr(i) + '. ' + data[i-1];
+end;
+
+// Add printers and select "Microsoft Print to PDF" as default
 procedure TfrmParticipant.FormCreate(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
@@ -56,19 +69,6 @@ begin
 
   // Print
   unitPrint.printList(cbPrinters.ItemIndex, 'Teilnehmer', data);
-end;
-
-// Generate participants list
-procedure generateList(data : TStrings);
-var i : Integer;
-begin
-  // Init StringGrid
-  frmParticipant.sgNames.Cells[0, 0] := 'Name';
-
-  // Fill list
-  frmParticipant.sgNames.RowCount := data.Count + 1;
-  for i := 1 to data.Count
-    do frmParticipant.sgNames.Cells[0, i] := IntToStr(i) + '. ' + data[i-1];
 end;
 
 end.
