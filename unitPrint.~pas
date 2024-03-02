@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, grids, StdCtrls, Printers;
+  Dialogs, Grids, StdCtrls, Printers;
 
 procedure printList(printIndex : Integer; header : String; data : Array of String);
 procedure printRound(printIndex : Integer; grid : TStringgrid);

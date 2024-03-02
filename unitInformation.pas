@@ -37,14 +37,29 @@ uses unitMain, unitParticipant, unitRounds;
 
 // Add new name
 procedure TfrmInformation.btnAddNameClick(Sender: TObject);
+var i : Integer;
 begin
+  // Check if the text field isn't empty
   if Length(editName.Text) > 0
     then begin
+      // Check if the name already exists
+      for i := 0 to listNames.Items.Count - 1
+        do begin
+          if listNames.Items[i] = editName.Text
+            then begin
+              ShowMessage('Diesen Namen hast du bereits hinzugefügt!');
+              editName.Text := '';
+              Exit;
+            end;
+        end;
+
+      // If the name doesn't exist, add it
       listNames.Items.Add(editName.Text);
       editName.Text := '';
       Inc(nameCount);
       labNameCount.Caption := 'Gesamt: ' + IntToStr(nameCount);
-    end;
+    end
+  else ShowMessage('Bitte gebe zuerst einen Namen ein!');
 end;
 
 // Delete selected name

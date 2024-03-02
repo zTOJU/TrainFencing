@@ -31,7 +31,7 @@ var
 
 implementation
 
-uses unitMain, unitParticipant;
+uses unitMain, unitParticipant, unitRounds;
 
 {$R *.dfm}
 
@@ -76,6 +76,7 @@ begin
       unitMain.setTabStatus(1, true);
 
       // Create rounds
+      unitRounds.generateRound(frmInformation.listNames.Items);
       unitMain.setTabStatus(2, true);
     end
     else ShowMessage('Bitte füge erst mindestens 2 Namen hinzu!');

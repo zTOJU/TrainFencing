@@ -221,7 +221,7 @@ end;
 // Print round
 procedure TfrmRounds.btnPrintClick(Sender: TObject);
 begin
-  unitPrint.printRound(cbPrinters.ItemIndex);
+  unitPrint.printRound(cbPrinters.ItemIndex, sgRound);
 end;
 
 end.

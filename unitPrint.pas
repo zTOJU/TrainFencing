@@ -22,10 +22,10 @@ begin
   Printer.Canvas.Font.Name := 'Times New Roman';
   Printer.Canvas.Font.Size := 30;
   Printer.Canvas.Font.Color := clBlack;
-  Printer.Canvas.TextOut(300, 600 - Printer.Canvas.TextHeight(header), header);
+  Printer.Canvas.TextOut(300, 600 - 25 - Printer.Canvas.TextHeight(header), header);
   // Date
   Printer.Canvas.Font.Size := 12;
-  Printer.Canvas.TextOut(Printer.PageWidth - Printer.Canvas.TextWidth(dateString) - 300, 600 - Printer.Canvas.TextHeight(dateString), dateString);
+  Printer.Canvas.TextOut(Printer.PageWidth - Printer.Canvas.TextWidth(dateString) - 300, 600 - 25 - Printer.Canvas.TextHeight(dateString), dateString);
   // Line
   Printer.Canvas.Pen.Width := 5;
   Printer.Canvas.MoveTo(300, 600);
