@@ -186,6 +186,10 @@ begin
       btnPrint.Hide;
       cbPrinters.Hide;
 
+      // Resize stringgrid
+      sgRound.Top := 16;
+      sgRound.Height := 433;
+
       // Get data (calc index)
       SetLength(results, sgRound.RowCount - 1);
       for iName := 0 to High(results)

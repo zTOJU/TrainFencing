@@ -25,10 +25,10 @@ object frmRounds: TfrmRounds
     DefaultColWidth = 30
     DefaultRowHeight = 30
     RowCount = 2
-    Font.Charset = DEFAULT_CHARSET
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
-    Font.Name = 'MS Sans Serif'
+    Font.Name = 'Montserrat'
     Font.Style = []
     ParentFont = False
     TabOrder = 0
@@ -38,11 +38,11 @@ object frmRounds: TfrmRounds
     Left = 48
     Top = 16
     Width = 33
-    Height = 33
-    Font.Charset = DEFAULT_CHARSET
+    Height = 35
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -20
-    Font.Name = 'MS Sans Serif'
+    Font.Name = 'Montserrat'
     Font.Style = []
     ParentFont = False
     TabOrder = 1
@@ -54,10 +54,10 @@ object frmRounds: TfrmRounds
     Width = 75
     Height = 33
     Caption = 'Eintragen'
-    Font.Charset = DEFAULT_CHARSET
+    Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
-    Font.Name = 'MS Sans Serif'
+    Font.Name = 'Montserrat'
     Font.Style = []
     ParentFont = False
     TabOrder = 2
@@ -69,6 +69,12 @@ object frmRounds: TfrmRounds
     Width = 33
     Height = 17
     Caption = 'V'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
   end
   object rbtnLoose: TRadioButton
@@ -77,6 +83,12 @@ object frmRounds: TfrmRounds
     Width = 33
     Height = 17
     Caption = 'D'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
   end
   object btnEndRound: TButton
@@ -85,6 +97,12 @@ object frmRounds: TfrmRounds
     Width = 137
     Height = 33
     Caption = 'Runde beenden'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 5
     OnClick = btnEndRoundClick
   end
@@ -94,6 +112,12 @@ object frmRounds: TfrmRounds
     Width = 75
     Height = 33
     Caption = 'L'#246'schen'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 6
     OnClick = btnDelResultClick
   end
@@ -103,6 +127,12 @@ object frmRounds: TfrmRounds
     Width = 137
     Height = 33
     Caption = 'Drucken'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 7
     OnClick = btnPrintClick
   end
@@ -110,13 +140,13 @@ object frmRounds: TfrmRounds
     Left = 536
     Top = 16
     Width = 249
-    Height = 33
-    Font.Charset = DEFAULT_CHARSET
+    Height = 35
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -20
-    Font.Name = 'MS Sans Serif'
+    Font.Name = 'Montserrat'
     Font.Style = []
-    ItemHeight = 25
+    ItemHeight = 27
     ParentFont = False
     TabOrder = 8
     Text = 'cbPrinters'
