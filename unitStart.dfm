@@ -1,4 +1,4 @@
-object frmInformation: TfrmInformation
+object frmStart: TfrmStart
   Left = 179
   Top = 220
   BorderIcons = [biSystemMenu]
@@ -44,24 +44,42 @@ object frmInformation: TfrmInformation
   object labNameCount: TLabel
     Left = 380
     Top = 408
-    Width = 48
-    Height = 13
+    Width = 55
+    Height = 15
     Caption = 'Gesamt: 0'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
   end
   object listNames: TListBox
     Left = 284
     Top = 150
     Width = 249
     Height = 249
-    ItemHeight = 13
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ItemHeight = 15
+    ParentFont = False
     TabOrder = 0
   end
   object editName: TEdit
     Left = 284
     Top = 120
     Width = 249
-    Height = 21
+    Height = 23
     Hint = 'Name des Teilnehmers'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object btnAddName: TButton
@@ -70,6 +88,12 @@ object frmInformation: TfrmInformation
     Width = 75
     Height = 25
     Caption = 'Hinzuf'#252'gen'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     OnClick = btnAddNameClick
   end
@@ -79,6 +103,12 @@ object frmInformation: TfrmInformation
     Width = 75
     Height = 25
     Caption = 'L'#246'schen'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
     OnClick = btnDelNameClick
   end
@@ -88,6 +118,12 @@ object frmInformation: TfrmInformation
     Width = 75
     Height = 25
     Caption = 'Best'#228'tigen'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
     OnClick = btnSubmitNamesClick
   end

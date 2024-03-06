@@ -43,7 +43,7 @@ var
 
 implementation
 
-uses unitInformation, unitParticipant, unitRounds, unitResults;
+uses unitStart, unitParticipant, unitRounds, unitResults;
 
 {$R *.dfm}
 
@@ -81,7 +81,7 @@ end;
 // Init
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-  Tabs[0].form := frmInformation;
+  Tabs[0].form := frmStart;
   setTabStatus(0, true);
   Tabs[1].form := frmParticipant;
   setTabStatus(1, false);

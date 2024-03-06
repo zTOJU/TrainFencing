@@ -1,4 +1,4 @@
-unit unitInformation;
+unit unitStart;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Dialogs, StdCtrls;
 
 type
-  TfrmInformation = class(TForm)
+  TfrmStart = class(TForm)
     Titel: TLabel;
     Titel2: TLabel;
     listNames: TListBox;
@@ -26,7 +26,7 @@ type
   end;
 
 var
-  frmInformation: TfrmInformation;
+  frmStart: TfrmStart;
   nameCount : Integer;
 
 implementation
@@ -36,7 +36,7 @@ uses unitMain, unitParticipant, unitRounds;
 {$R *.dfm}
 
 // Add new name
-procedure TfrmInformation.btnAddNameClick(Sender: TObject);
+procedure TfrmStart.btnAddNameClick(Sender: TObject);
 var i : Integer;
 begin
   // Check if the text field isn't empty
@@ -63,7 +63,7 @@ begin
 end;
 
 // Delete selected name
-procedure TfrmInformation.btnDelNameClick(Sender: TObject);
+procedure TfrmStart.btnDelNameClick(Sender: TObject);
 begin
   if listNames.ItemIndex > -1
     then begin
@@ -74,7 +74,7 @@ begin
     else ShowMessage('Bitte erst einen Namen auswählen!');
 end;
 
-procedure TfrmInformation.btnSubmitNamesClick(Sender: TObject);
+procedure TfrmStart.btnSubmitNamesClick(Sender: TObject);
 begin
   if listNames.Count > 1
     then begin
@@ -87,11 +87,11 @@ begin
       labNameCount.Hide;
 
       // Create participants list
-      unitParticipant.generateList(frmInformation.listNames.Items);
+      unitParticipant.generateList(frmStart.listNames.Items);
       unitMain.setTabStatus(1, true);
 
       // Create rounds
-      unitRounds.generateRound(frmInformation.listNames.Items);
+      unitRounds.generateRound(frmStart.listNames.Items);
       unitMain.setTabStatus(2, true);
     end
     else ShowMessage('Bitte füge erst mindestens 2 Namen hinzu!');

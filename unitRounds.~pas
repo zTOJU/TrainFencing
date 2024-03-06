@@ -39,7 +39,7 @@ var
 
 implementation
 
-uses unitInformation, unitMain, unitResults, unitPrint;
+uses uniStart, unitMain, unitResults, unitPrint;
 
 {$R *.dfm}
 
@@ -105,7 +105,7 @@ begin
 
   // Choose V (win) or D (loose)
   if (rbtnWin.Checked = false) and (rbtnLoose.Checked = false)
-    then ShowMessage('Bitte wähle Sieg (V) oder Niederlage (D) aus!')
+    then ShowMessage('Bitte wï¿½hle Sieg (V) oder Niederlage (D) aus!')
   else if rbtnWin.Checked
     then winLoosePrefix := 'V'
   else if rbtnLoose.Checked
@@ -121,10 +121,10 @@ begin
 
       // Check if D > 4 (not possible result)
       if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) > 4)
-        then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein.')
+        then ShowMessage('Bei einer Niederlage kï¿½nnen nur maximal vier Treffer erzielt worden sein.')
       // Check sameResult
       else if sameResult
-        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen.')
+        then ShowMessage('Du hast bereits an zugehï¿½riger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen.')
       // Check if D result > V Result
       else if (winLoosePrefix[1] = 'D') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
         then if StrToInt(mResult) > StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
@@ -138,7 +138,7 @@ begin
       // Set result (final step)
       else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
     end
-  else ShowMessage('Ungültiges Ergebnis oder kein Feld ausgewählt.');
+  else ShowMessage('Ungï¿½ltiges Ergebnis oder kein Feld ausgewï¿½hlt.');
 end;
 
 // Allow only numbers between 0-5 and backspace
