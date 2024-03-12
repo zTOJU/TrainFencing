@@ -1,9 +1,9 @@
-program Project1;
+program TrainFencing;
 
 uses
   Forms,
   unitMain in 'unitMain.pas' {frmMain},
-  unitInformation in 'unitInformation.pas' {frmInformation},
+  unitStart in 'unitStart.pas' {frmStart},
   unitParticipant in 'unitParticipant.pas' {frmParticipant},
   unitRounds in 'unitRounds.pas' {frmRounds},
   unitResults in 'unitResults.pas' {frmResults},
@@ -13,9 +13,9 @@ uses
 
 begin
   Application.Initialize;
-  Application.Title := 'Training competition fencing';
+  Application.Title := 'TrainFencing';
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TfrmInformation, frmInformation);
+  Application.CreateForm(TfrmStart, frmStart);
   Application.CreateForm(TfrmParticipant, frmParticipant);
   Application.CreateForm(TfrmRounds, frmRounds);
   Application.CreateForm(TfrmResults, frmResults);

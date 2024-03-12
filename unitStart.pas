@@ -8,14 +8,15 @@ uses
 
 type
   TfrmStart = class(TForm)
-    Titel: TLabel;
-    Titel2: TLabel;
+    Titel1: TLabel;
     listNames: TListBox;
     editName: TEdit;
     btnAddName: TButton;
     btnDelName: TButton;
     labNameCount: TLabel;
     btnSubmitNames: TButton;
+    Titel: TLabel;
+    Label1: TLabel;
     procedure btnAddNameClick(Sender: TObject);
     procedure btnDelNameClick(Sender: TObject);
     procedure btnSubmitNamesClick(Sender: TObject);

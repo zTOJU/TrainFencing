@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
   Left = 179
   Top = 123
-  BorderIcons = [biSystemMenu]
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Menu'
   ClientHeight = 61
