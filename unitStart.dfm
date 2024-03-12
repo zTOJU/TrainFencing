@@ -16,10 +16,10 @@ object frmStart: TfrmStart
   PixelsPerInch = 96
   TextHeight = 13
   object labTitel1: TLabel
-    Left = 368
-    Top = 16
-    Width = 278
-    Height = 18
+    Left = 416
+    Top = 18
+    Width = 331
+    Height = 22
     Caption = 'Organisation f'#252'r Trainingswettk'#228'mpfe im'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -31,8 +31,8 @@ object frmStart: TfrmStart
   object labNameCount: TLabel
     Left = 380
     Top = 432
-    Width = 49
-    Height = 14
+    Width = 55
+    Height = 15
     Caption = 'Gesamt: 0'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -42,10 +42,10 @@ object frmStart: TfrmStart
     ParentFont = False
   end
   object labTitel: TLabel
-    Left = 16
+    Left = 40
     Top = 8
-    Width = 298
-    Height = 56
+    Width = 331
+    Height = 66
     Caption = 'TrainFencing'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -55,10 +55,10 @@ object frmStart: TfrmStart
     ParentFont = False
   end
   object labTitel2: TLabel
-    Left = 368
-    Top = 40
-    Width = 304
-    Height = 18
+    Left = 416
+    Top = 42
+    Width = 352
+    Height = 22
     Caption = 'Fechten (Entwickelt von Thore Korte  A24-1)'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -77,7 +77,7 @@ object frmStart: TfrmStart
     Font.Height = -11
     Font.Name = 'Montserrat'
     Font.Style = []
-    ItemHeight = 14
+    ItemHeight = 15
     ParentFont = False
     TabOrder = 0
   end
@@ -85,7 +85,7 @@ object frmStart: TfrmStart
     Left = 284
     Top = 112
     Width = 249
-    Height = 22
+    Height = 23
     Hint = 'Name des Teilnehmers'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
