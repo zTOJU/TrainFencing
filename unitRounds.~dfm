@@ -38,7 +38,7 @@ object frmRounds: TfrmRounds
     Left = 48
     Top = 16
     Width = 33
-    Height = 35
+    Height = 31
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -20
@@ -140,13 +140,13 @@ object frmRounds: TfrmRounds
     Left = 536
     Top = 16
     Width = 249
-    Height = 35
+    Height = 31
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -20
     Font.Name = 'Montserrat'
     Font.Style = []
-    ItemHeight = 27
+    ItemHeight = 23
     ParentFont = False
     TabOrder = 8
     Text = 'cbPrinters'

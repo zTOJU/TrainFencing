@@ -32,7 +32,13 @@ uses unitPrint;
 
 {$R *.dfm}
 
-// Generate results list
+{
+  generateList
+    description:
+      Generate results list
+    args:
+      data - match results (name, index)
+}
 procedure generateList(data : Array of TRoundResult);
 var iSort, jSort, iList : Integer;
     tempData : TRoundResult;
@@ -62,20 +68,32 @@ begin
     end;
 end;
 
-// Add printers and select "Microsoft Print to PDF" as default
+{
+  frmResults.FormCreate
+    description:
+      Add printers and select "Microsoft Print to PDF" as default
+}
 procedure TfrmResults.FormCreate(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
   cbPrinters.ItemIndex := cbPrinters.Items.IndexOf('Microsoft Print to PDF');
 end;
 
-// Reload printers
+{
+  PrintersDropDown
+    description:
+      Reload printers
+}
 procedure TfrmResults.cbPrintersDropDown(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
 end;
 
-// Print results list
+{
+  Print
+    description:
+      Print results list
+}
 procedure TfrmResults.btnPrintClick(Sender: TObject);
 var data : Array of String;
     i    : Integer;

@@ -51,22 +51,41 @@ uses unitStart, unitParticipant, unitRounds, unitResults;
   Start:              0
   Teilnehmer:         1
   Rundenübersicht:    2
-  Platzierung:        3
+  Ergebnisse:         3
 }
 
-// Check if switching to a new tab is allowed
+{
+  allowTab
+    description:
+      Check if switching to a new tab is allowed
+    args:
+      tab - The tab that should get checked
+}
 function allowTab(tab: Integer):Boolean;
 begin
   Result := Tabs[tab].status;
 end;
 
-// Enable/Disable switching to a tab
+{
+  setTabStatus
+    description:
+      Enable/Disable switching to a tab
+    args:
+      tab - The tab that should be selected
+      status - Enable or disable
+}
 procedure setTabStatus(tab: Integer; status: Boolean);
 begin
   Tabs[tab].status := status;
 end;
 
-// Switch to another tab
+{
+  changeTab
+    description:
+      Switch to another tab
+    args:
+      newTab - The new tab
+}
 procedure changeTab(newTab: Integer);
 begin
   if allowTab(newTab) then
@@ -78,7 +97,11 @@ begin
   else ShowMessage('Kein Zugriff aktuell!');
 end;
 
-// Init
+{
+  frmMain.FormShow
+    description:
+      Initialize all tabs and open frmStart
+}
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
   Tabs[0].form := frmStart;

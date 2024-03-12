@@ -11,6 +11,13 @@ procedure printRound(printIndex : Integer; grid : TStringgrid);
 
 implementation
 
+{
+  addHeader
+    description:
+      Add a header to a print canvas
+    args:
+      header - The header as a string
+}
 procedure addHeader(header : String);
 var dateString : String;
 begin
@@ -22,16 +29,25 @@ begin
   Printer.Canvas.Font.Name := 'Times New Roman';
   Printer.Canvas.Font.Size := 30;
   Printer.Canvas.Font.Color := clBlack;
-  Printer.Canvas.TextOut(300, 600 - Printer.Canvas.TextHeight(header), header);
+  Printer.Canvas.TextOut(300, 600 - 25 - Printer.Canvas.TextHeight(header), header);
   // Date
   Printer.Canvas.Font.Size := 12;
-  Printer.Canvas.TextOut(Printer.PageWidth - Printer.Canvas.TextWidth(dateString) - 300, 600 - Printer.Canvas.TextHeight(dateString), dateString);
+  Printer.Canvas.TextOut(Printer.PageWidth - Printer.Canvas.TextWidth(dateString) - 300, 600 - 25 - Printer.Canvas.TextHeight(dateString), dateString);
   // Line
   Printer.Canvas.Pen.Width := 5;
   Printer.Canvas.MoveTo(300, 600);
   Printer.Canvas.LineTo(Printer.PageWidth - 300, 600);
 end;
 
+{
+  printList
+    description:
+      Print a list with a header above
+    args:
+      printIndex - The printer that should print the document
+      header - The header of the document as a string
+      data - List of strings (names)
+}
 procedure printList(printIndex : Integer; header : String; data : Array of String);
 var i          : Integer;
     dateString : String;

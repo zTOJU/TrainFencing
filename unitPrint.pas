@@ -11,6 +11,13 @@ procedure printRound(printIndex : Integer; grid : TStringgrid);
 
 implementation
 
+{
+  addHeader
+    description:
+      Add a header to a print canvas
+    args:
+      header - The header as a string
+}
 procedure addHeader(header : String);
 var dateString : String;
 begin
@@ -32,6 +39,15 @@ begin
   Printer.Canvas.LineTo(Printer.PageWidth - 300, 600);
 end;
 
+{
+  printList
+    description:
+      Print a list with a header above
+    args:
+      printIndex - The printer that should print the document
+      header - The header of the document as a string
+      data - List of strings (names)
+}
 procedure printList(printIndex : Integer; header : String; data : Array of String);
 var i          : Integer;
     dateString : String;
@@ -57,6 +73,14 @@ begin
   ShowMessage(header + ' erfolgreich gedruckt!');
 end;
 
+{
+  printRound
+    description:
+      Print a round
+    args:
+      printIndex - The printer that should print the document
+      grid - The round grid
+}
 procedure printRound(printIndex : Integer; grid : TStringgrid);
 var i, j       : Integer;
     cellRect   : TRect;

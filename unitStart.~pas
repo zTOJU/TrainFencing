@@ -9,7 +9,6 @@ uses
 type
   TfrmStart = class(TForm)
     Titel1: TLabel;
-    Titel2: TLabel;
     listNames: TListBox;
     editName: TEdit;
     btnAddName: TButton;
@@ -17,7 +16,7 @@ type
     labNameCount: TLabel;
     btnSubmitNames: TButton;
     Titel: TLabel;
-    Label1: TLabel;
+    Titel2: TLabel;
     procedure btnAddNameClick(Sender: TObject);
     procedure btnDelNameClick(Sender: TObject);
     procedure btnSubmitNamesClick(Sender: TObject);
@@ -37,7 +36,11 @@ uses unitMain, unitParticipant, unitRounds;
 
 {$R *.dfm}
 
-// Add new name
+{
+  AddName
+    description:
+      Add new name
+}
 procedure TfrmStart.btnAddNameClick(Sender: TObject);
 var i : Integer;
 begin
@@ -64,7 +67,11 @@ begin
   else ShowMessage('Bitte gebe zuerst einen Namen ein!');
 end;
 
-// Delete selected name
+{
+  DelName
+    description:
+      Delete selected name
+}
 procedure TfrmStart.btnDelNameClick(Sender: TObject);
 begin
   if listNames.ItemIndex > -1
@@ -73,9 +80,14 @@ begin
       Dec(nameCount);
       labNameCount.Caption := 'Gesamt: ' + IntToStr(nameCount);
       end
-    else ShowMessage('Bitte erst einen Namen auswählen!');
+    else ShowMessage('Bitte wähle zuerst einen Namen aus!');
 end;
 
+{
+  SubmitNames
+    description:
+      Hide name list and create participants list and rounds
+}
 procedure TfrmStart.btnSubmitNamesClick(Sender: TObject);
 begin
   if listNames.Count > 1
@@ -96,7 +108,7 @@ begin
       unitRounds.generateRound(frmStart.listNames.Items);
       unitMain.setTabStatus(2, true);
     end
-    else ShowMessage('Bitte füge erst mindestens 2 Namen hinzu!');
+    else ShowMessage('Bitte füge erst mindestens zwei Namen hinzu!');
 end;
 
 end.

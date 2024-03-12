@@ -31,7 +31,13 @@ uses unitPrint;
 
 {$R *.dfm}
 
-// Generate participants list
+{
+  generateList
+    description:
+      Generate participants list
+    args:
+      data - List of names
+}
 procedure generateList(data : TStrings);
 var i : Integer;
 begin
@@ -44,20 +50,32 @@ begin
     do frmParticipant.sgNames.Cells[0, i] := IntToStr(i) + '. ' + data[i-1];
 end;
 
-// Add printers and select "Microsoft Print to PDF" as default
+{
+  frmParticipant.FormCreate
+    description:
+      Add printers and select "Microsoft Print to PDF" as default
+}
 procedure TfrmParticipant.FormCreate(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
   cbPrinters.ItemIndex := cbPrinters.Items.IndexOf('Microsoft Print to PDF');
 end;
 
-// Reload printers
+{
+  PrintersDropDown
+    description:
+      Reload printers
+}
 procedure TfrmParticipant.cbPrintersDropDown(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
 end;
 
-// Print participants list
+{
+  Print
+    description:
+      Print participants list
+}
 procedure TfrmParticipant.btnPrintClick(Sender: TObject);
 var data : Array of String;
     i    : Integer;

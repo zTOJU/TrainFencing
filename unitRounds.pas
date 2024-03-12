@@ -43,7 +43,11 @@ uses unitStart, unitMain, unitResults, unitPrint;
 
 {$R *.dfm}
 
-// Draw results (cells)
+{
+  RoundDrawCell
+    description:
+      Draw results (cells)
+}
 procedure TfrmRounds.sgRoundDrawCell(Sender: TObject; ACol, ARow: Integer;
   Rect: TRect; State: TGridDrawState);
 var text : String;
@@ -74,7 +78,13 @@ begin
     end;
 end;
 
-// Generate round overview
+{
+  generateRound
+    description:
+      Generate round overview
+    args:
+      data - List of names
+}
 procedure generateRound(data : TStrings);
 var i : Integer;
 begin
@@ -94,7 +104,11 @@ begin
     do frmRounds.sgRound.Cells[i, i] := 'xxx';
 end;
 
-// Add new result
+{
+  AddResult
+    description:
+      Add new match result
+}
 procedure TfrmRounds.btnMResultClick(Sender: TObject);
 var mResult : String;
     winLoosePrefix : String;
@@ -105,7 +119,7 @@ begin
 
   // Choose V (win) or D (loose)
   if (rbtnWin.Checked = false) and (rbtnLoose.Checked = false)
-    then ShowMessage('Bitte wï¿½hle Sieg (V) oder Niederlage (D) aus!')
+    then ShowMessage('Bitte wähle Sieg (V) oder Niederlage (D) aus!')
   else if rbtnWin.Checked
     then winLoosePrefix := 'V'
   else if rbtnLoose.Checked
@@ -114,34 +128,38 @@ begin
   // Double check if the result is legal (1 num, not non-existing match, set wLprefix)
   if (Length(mResult) = 1) and (sgRound.Col <> sgRound.Row) and (winLoosePrefix <> '')
     then begin
-      // Check if there is already a other result for this opponent (maybe not the best way)
+      // Check if there is already another result for this opponent (maybe not the best way)
       if length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0
         then if sgRound.Cells[sgRound.Row, sgRound.Col][1] = winLoosePrefix
             then sameResult := true;
 
       // Check if D > 4 (not possible result)
       if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) > 4)
-        then ShowMessage('Bei einer Niederlage kï¿½nnen nur maximal vier Treffer erzielt worden sein.')
+        then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein!')
       // Check sameResult
       else if sameResult
-        then ShowMessage('Du hast bereits an zugehï¿½riger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen.')
+        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen!')
       // Check if D result > V Result
       else if (winLoosePrefix[1] = 'D') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
         then if StrToInt(mResult) > StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
-          then ShowMessage('Der Fechter, der verloren hat, kann nicht mehr Treffer als der Gewinner erzielt haben.')
+          then ShowMessage('Der Fechter, der verloren hat, kann nicht mehr Treffer als der Gewinner erzielt haben!')
           else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
       // Check if V result < D Result
       else if (winLoosePrefix[1] = 'V') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
         then if StrToInt(mResult) < StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
-          then ShowMessage('Der Fechter, der gewonnen hat, kann nicht weniger Treffer als der Verlierer erzielt haben.')
+          then ShowMessage('Der Fechter, der gewonnen hat, kann nicht weniger Treffer als der Verlierer erzielt haben!')
           else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
       // Set result (final step)
       else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
     end
-  else ShowMessage('Ungï¿½ltiges Ergebnis oder kein Feld ausgewï¿½hlt.');
+  else ShowMessage('Du hast entweder kein Feld ausgewählt oder das Ergebnis ist ungültig!');
 end;
 
-// Allow only numbers between 0-5 and backspace
+{
+  ResultKeyPress
+    description:
+      Allow only numbers between 0-5 and backspace
+}
 procedure TfrmRounds.editMResultKeyPress(Sender: TObject; var Key: Char);
 begin
   if not (Key in ['0'..'5', #8])
@@ -150,7 +168,11 @@ begin
     then Key := #0;
 end;
 
-// Delete result
+{
+  DelResult
+    description:
+      Delete match result
+}
 procedure TfrmRounds.btnDelResultClick(Sender: TObject);
 begin
   if length(sgRound.Cells[sgRound.Col, sgRound.Row]) > 0
@@ -158,7 +180,11 @@ begin
       then sgRound.Cells[sgRound.Col, sgRound.Row] := '';
 end;
 
-// End Round and calc results
+{
+  EndRound
+    description:
+      End round and calc results
+}
 procedure TfrmRounds.btnEndRoundClick(Sender: TObject);
 var x,y : Integer;
     emptyMatches : Integer;
@@ -169,8 +195,8 @@ var x,y : Integer;
 begin
   emptyMatches := 0;
   // Check if all results are entered
-  for x:=1 to sgRound.ColCount - 1
-    do for y:=1 to sgRound.RowCount - 1
+  for x := 1 to sgRound.ColCount - 1
+    do for y := 1 to sgRound.RowCount - 1
       do if sgRound.Cells[x,y] = ''
         then Inc(emptyMatches);
 
@@ -211,20 +237,32 @@ begin
     else ShowMessage('Es fehlen noch ' + IntToStr(emptyMatches) + ' Ergebnisse!');
 end;
 
-// Add printers and select "Microsoft Print to PDF" as default
+{
+  frmRound.FormCreate
+    description:
+      Add printers and select "Microsoft Print to PDF" as default
+}
 procedure TfrmRounds.FormCreate(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
   cbPrinters.ItemIndex := cbPrinters.Items.IndexOf('Microsoft Print to PDF');
 end;
 
-// Reload printers
+{
+  PrintersDropDown
+    description:
+      Reload printers
+}
 procedure TfrmRounds.cbPrintersDropDown(Sender: TObject);
 begin
   cbPrinters.Items := Printer.Printers;
 end;
 
-// Print round
+{
+  Print
+    description:
+      Print round
+}
 procedure TfrmRounds.btnPrintClick(Sender: TObject);
 begin
   unitPrint.printRound(cbPrinters.ItemIndex, sgRound);
