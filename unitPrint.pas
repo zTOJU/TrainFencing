@@ -49,15 +49,10 @@ end;
       data - List of strings (names)
 }
 procedure printList(printIndex : Integer; header : String; data : Array of String);
-var i          : Integer;
-    dateString : String;
+var i : Integer;
 begin
   // Set printer
   Printer.PrinterIndex := printIndex;
-
-  // Get current date
-  ShortDateFormat := 'dd.mm.yyyy';
-  dateString := DateToStr(Date);
 
   // Print
   Printer.BeginDoc;

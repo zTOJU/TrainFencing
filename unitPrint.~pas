@@ -73,6 +73,14 @@ begin
   ShowMessage(header + ' erfolgreich gedruckt!');
 end;
 
+{
+  printRound
+    description:
+      Print a round
+    args:
+      printIndex - The printer that should print the document
+      grid - The round grid
+}
 procedure printRound(printIndex : Integer; grid : TStringgrid);
 var i, j       : Integer;
     cellRect   : TRect;
