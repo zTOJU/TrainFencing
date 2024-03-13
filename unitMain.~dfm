@@ -1,0 +1,79 @@
+object frmMain: TfrmMain
+  Left = 179
+  Top = 123
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Menu'
+  ClientHeight = 61
+  ClientWidth = 802
+  Color = clGradientActiveCaption
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btnParticipant: TButton
+    Left = 216
+    Top = 16
+    Width = 160
+    Height = 25
+    Caption = 'Teilnehmer'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = btnParticipantClick
+  end
+  object btnInformation: TButton
+    Left = 8
+    Top = 16
+    Width = 160
+    Height = 25
+    Caption = 'Start'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnInformationClick
+  end
+  object btnRounds: TButton
+    Left = 424
+    Top = 16
+    Width = 160
+    Height = 25
+    Caption = 'Runden'#252'bersicht'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = btnRoundsClick
+  end
+  object btnResults: TButton
+    Left = 632
+    Top = 16
+    Width = 160
+    Height = 25
+    Caption = 'Ergebnisse'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Montserrat'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnClick = btnResultsClick
+  end
+end
