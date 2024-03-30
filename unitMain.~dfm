@@ -21,7 +21,7 @@ object frmMain: TfrmMain
     Top = 16
     Width = 160
     Height = 25
-    Caption = 'Teilnehmer'
+    Caption = 'Participants'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -51,7 +51,7 @@ object frmMain: TfrmMain
     Top = 16
     Width = 160
     Height = 25
-    Caption = 'Runden'#252'bersicht'
+    Caption = 'Round'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -66,7 +66,7 @@ object frmMain: TfrmMain
     Top = 16
     Width = 160
     Height = 25
-    Caption = 'Ergebnisse'
+    Caption = 'Results'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13

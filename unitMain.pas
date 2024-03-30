@@ -49,9 +49,9 @@ uses unitStart, unitParticipant, unitRounds, unitResults;
 
 {
   Start:              0
-  Teilnehmer:         1
-  Rundenübersicht:    2
-  Ergebnisse:         3
+  Participants:       1
+  Round:              2
+  Results:            3
 }
 
 {
@@ -94,7 +94,7 @@ begin
       Tabs[newTab].form.Show;
       currentTab := newTab;
     end
-  else ShowMessage('Kein Zugriff aktuell!');
+  else ShowMessage('No access currently!');
 end;
 
 {

@@ -104,7 +104,7 @@ begin
     do data[i] := sgResults.Cells[0, i + 1];
 
   // Print
-  unitPrint.printList(cbPrinters.ItemIndex, 'Ergebnisse', data);
+  unitPrint.printList(cbPrinters.ItemIndex, 'Results', data);
 end;
 
 end.

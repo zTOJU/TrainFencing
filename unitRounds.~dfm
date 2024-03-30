@@ -3,7 +3,7 @@ object frmRounds: TfrmRounds
   Top = 220
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Runden'#252'bersicht'
+  Caption = 'Round'
   ClientHeight = 465
   ClientWidth = 802
   Color = clGradientActiveCaption
@@ -53,7 +53,7 @@ object frmRounds: TfrmRounds
     Top = 16
     Width = 75
     Height = 33
-    Caption = 'Eintragen'
+    Caption = 'Enter'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -96,7 +96,7 @@ object frmRounds: TfrmRounds
     Top = 16
     Width = 137
     Height = 33
-    Caption = 'Runde beenden'
+    Caption = 'End round'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -111,7 +111,7 @@ object frmRounds: TfrmRounds
     Top = 16
     Width = 75
     Height = 33
-    Caption = 'L'#246'schen'
+    Caption = 'Delete'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -126,7 +126,7 @@ object frmRounds: TfrmRounds
     Top = 16
     Width = 137
     Height = 33
-    Caption = 'Drucken'
+    Caption = 'Print'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
