@@ -86,7 +86,7 @@ begin
     do data[i] := sgNames.Cells[0, i + 1];
 
   // Print
-  unitPrint.printList(cbPrinters.ItemIndex, 'Teilnehmer', data);
+  unitPrint.printList(cbPrinters.ItemIndex, 'Participants', data);
 end;
 
 end.

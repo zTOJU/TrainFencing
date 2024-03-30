@@ -52,7 +52,7 @@ begin
         do begin
           if listNames.Items[i] = editName.Text
             then begin
-              ShowMessage('Diesen Namen hast du bereits hinzugefügt!');
+              ShowMessage('You have already added this name!');
               editName.Text := '';
               Exit;
             end;
@@ -62,9 +62,9 @@ begin
       listNames.Items.Add(editName.Text);
       editName.Text := '';
       Inc(nameCount);
-      labNameCount.Caption := 'Gesamt: ' + IntToStr(nameCount);
+      labNameCount.Caption := 'Total: ' + IntToStr(nameCount);
     end
-  else ShowMessage('Bitte gebe zuerst einen Namen ein!');
+  else ShowMessage('Please enter a name first!');
 end;
 
 {
@@ -78,9 +78,9 @@ begin
     then begin
       listNames.Items.Delete(listNames.ItemIndex);
       Dec(nameCount);
-      labNameCount.Caption := 'Gesamt: ' + IntToStr(nameCount);
+      labNameCount.Caption := 'Total: ' + IntToStr(nameCount);
       end
-    else ShowMessage('Bitte wähle zuerst einen Namen aus!');
+    else ShowMessage('Please select a name first!');
 end;
 
 {
@@ -108,7 +108,7 @@ begin
       unitRounds.generateRound(frmStart.listNames.Items);
       unitMain.setTabStatus(2, true);
     end
-    else ShowMessage('Bitte füge erst mindestens zwei Namen hinzu!');
+    else ShowMessage('Please add at least two names first!');
 end;
 
 end.

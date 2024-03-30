@@ -18,9 +18,9 @@ object frmStart: TfrmStart
   object labTitel1: TLabel
     Left = 416
     Top = 18
-    Width = 331
-    Height = 22
-    Caption = 'Organisation f'#252'r Trainingswettk'#228'mpfe im'
+    Width = 328
+    Height = 18
+    Caption = 'Organization for training competitions in fencing'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -31,9 +31,9 @@ object frmStart: TfrmStart
   object labNameCount: TLabel
     Left = 380
     Top = 432
-    Width = 55
-    Height = 15
-    Caption = 'Gesamt: 0'
+    Width = 34
+    Height = 14
+    Caption = 'Total: 0'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -44,8 +44,8 @@ object frmStart: TfrmStart
   object labTitel: TLabel
     Left = 40
     Top = 8
-    Width = 331
-    Height = 66
+    Width = 298
+    Height = 56
     Caption = 'TrainFencing'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -57,9 +57,9 @@ object frmStart: TfrmStart
   object labTitel2: TLabel
     Left = 416
     Top = 42
-    Width = 352
-    Height = 22
-    Caption = 'Fechten (Entwickelt von Thore Korte  A24-1)'
+    Width = 282
+    Height = 18
+    Caption = '(Developed by https://github.com/zTOJU)'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -77,7 +77,7 @@ object frmStart: TfrmStart
     Font.Height = -11
     Font.Name = 'Montserrat'
     Font.Style = []
-    ItemHeight = 15
+    ItemHeight = 14
     ParentFont = False
     TabOrder = 0
   end
@@ -85,7 +85,7 @@ object frmStart: TfrmStart
     Left = 284
     Top = 112
     Width = 249
-    Height = 23
+    Height = 22
     Hint = 'Name des Teilnehmers'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -100,7 +100,7 @@ object frmStart: TfrmStart
     Top = 144
     Width = 125
     Height = 25
-    Caption = 'Hinzuf'#252'gen'
+    Caption = 'Add'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -115,7 +115,7 @@ object frmStart: TfrmStart
     Top = 144
     Width = 125
     Height = 25
-    Caption = 'L'#246'schen'
+    Caption = 'Delete'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -130,7 +130,7 @@ object frmStart: TfrmStart
     Top = 400
     Width = 249
     Height = 25
-    Caption = 'Best'#228'tigen'
+    Caption = 'Submit'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11

@@ -3,7 +3,7 @@ object frmParticipant: TfrmParticipant
   Top = 220
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Teilnehmer'
+  Caption = 'Participants'
   ClientHeight = 465
   ClientWidth = 802
   Color = clGradientActiveCaption
@@ -39,7 +39,7 @@ object frmParticipant: TfrmParticipant
     Top = 16
     Width = 513
     Height = 33
-    Caption = 'Drucken'
+    Caption = 'Print'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13

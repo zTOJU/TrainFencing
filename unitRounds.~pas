@@ -119,7 +119,7 @@ begin
 
   // Choose V (win) or D (loose)
   if (rbtnWin.Checked = false) and (rbtnLoose.Checked = false)
-    then ShowMessage('Bitte wähle Sieg (V) oder Niederlage (D) aus!')
+    then ShowMessage('Please select victory (V) or defeat (D)!')
   else if rbtnWin.Checked
     then winLoosePrefix := 'V'
   else if rbtnLoose.Checked
@@ -135,24 +135,24 @@ begin
 
       // Check if D > 4 (not possible result)
       if (winLoosePrefix[1] = 'D') and (StrToInt(mResult) > 4)
-        then ShowMessage('Bei einer Niederlage können nur maximal vier Treffer erzielt worden sein!')
+        then ShowMessage('Only a maximum of four points can be scored in a defeat!')
       // Check sameResult
       else if sameResult
-        then ShowMessage('Du hast bereits an zugehöriger Stelle den gleichen Ausgang (Sieg bzw. Niederlage) des Gefechts eingetragen!')
+        then ShowMessage('You have already entered the same outcome (victory or defeat) of the match in the corresponding place!')
       // Check if D result > V Result
       else if (winLoosePrefix[1] = 'D') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
         then if StrToInt(mResult) > StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
-          then ShowMessage('Der Fechter, der verloren hat, kann nicht mehr Treffer als der Gewinner erzielt haben!')
+          then ShowMessage('The losing fencer cannot have scored more hits than the winner!')
           else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
       // Check if V result < D Result
       else if (winLoosePrefix[1] = 'V') and (length(sgRound.Cells[sgRound.Row, sgRound.Col]) > 0)
         then if StrToInt(mResult) < StrToInt(sgRound.Cells[sgRound.Row, sgRound.Col][2])
-          then ShowMessage('Der Fechter, der gewonnen hat, kann nicht weniger Treffer als der Verlierer erzielt haben!')
+          then ShowMessage('The fencer who has won cannot have scored fewer hits than the loser!')
           else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult
       // Set result (final step)
       else sgRound.Cells[sgRound.Col, sgRound.Row] := winLoosePrefix + mResult;
     end
-  else ShowMessage('Du hast entweder kein Feld ausgewählt oder das Ergebnis ist ungültig!');
+  else ShowMessage('You have either not selected a field or the result is invalid!');
 end;
 
 {
@@ -234,7 +234,7 @@ begin
       unitResults.generateList(results);
       unitMain.setTabStatus(3, true);
     end
-    else ShowMessage('Es fehlen noch ' + IntToStr(emptyMatches) + ' Ergebnisse!');
+    else ShowMessage('There are still ' + IntToStr(emptyMatches) + ' results missing!');
 end;
 
 {

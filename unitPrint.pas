@@ -65,7 +65,7 @@ begin
   Printer.EndDoc;
 
   // Done message
-  ShowMessage(header + ' erfolgreich gedruckt!');
+  ShowMessage(header + ' successfully printed!');
 end;
 
 {
@@ -86,7 +86,7 @@ begin
 
   Printer.BeginDoc;
   // Header
-  addHeader('Runde');
+  addHeader('Round');
   // Round Settings
   Printer.Canvas.Font.Size := 25;
   Printer.Canvas.Pen.Width := 3;
@@ -134,7 +134,7 @@ begin
   Printer.EndDoc;
 
   // Done message
-  ShowMessage('Runde erfolgreich gedruckt!');
+  ShowMessage('Round successfully printed!');
 end;
 
 end.
